@@ -1,15 +1,6 @@
 import { useState } from 'react';
 import './../css/Landing_Page.css';
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-} from '@mui/material';
-import healthCareProviders from './../data/hcp.json';
 import FindForm from '../components/FindForm';
-import { HealthCareProvider } from '../interfaces/HealthCareProvider';
 
 function LandingPage() {
   const INSURANCE_PROVIDERS = [
@@ -37,8 +28,6 @@ function LandingPage() {
   ];
 
   const [showForm, setShowForm] = useState<boolean>(false);
-  const [selectedHcp, setSelectedHcp] = useState<string>('');
-  const [hcpInRange, sethcpInRange] = useState<HealthCareProvider[]>([]);
 
   // These are for setting filter options
   const [distance, setDistance] = useState<number>(0);
@@ -50,16 +39,6 @@ function LandingPage() {
     setShowForm(!showForm);
   }
 
-  function filterHcpInRange() {
-    sethcpInRange(
-      healthCareProviders.filter((hcp: HealthCareProvider) => {
-        if (hcp.zipCode === zipCode) {
-          return hcp;
-        }
-      })
-    );
-  }
-
   return (
     <div className="lp">
       <div className="lp-title">Welcome to your Health Care Portal</div>
@@ -69,7 +48,7 @@ function LandingPage() {
         </div>
       </div>
       {showForm && (
-        <div>
+        <div style={{ position: 'fixed', zIndex: '1000' }}>
           <FindForm
             insuranceProviders={INSURANCE_PROVIDERS}
             healthCareServices={HEALTHCARE_SERVICES}
@@ -81,6 +60,7 @@ function LandingPage() {
             setZipCode={setzipCode}
             setInsurance={setInurance}
             setType={setType}
+            setShowForm={setShowForm}
           ></FindForm>
         </div>
       )}

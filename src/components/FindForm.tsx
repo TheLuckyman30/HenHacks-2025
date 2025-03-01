@@ -19,6 +19,7 @@ interface FindFormProps {
   setZipCode: (zipCode: string) => void;
   setInsurance: (insurance: string) => void;
   setType: (type: string) => void;
+  setShowForm: (show: boolean) => void;
 }
 
 function FindForm({
@@ -32,52 +33,84 @@ function FindForm({
   setZipCode,
   setInsurance,
   setType,
+  setShowForm,
 }: FindFormProps) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <TextField
-        label="Distance"
-        value={distance}
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-          setDistance(Number(event.target.value))
-        }
-      ></TextField>
-      <TextField
-        label="Zip Code"
-        value={zipCode}
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-          setZipCode(event.target.value)
-        }
-      ></TextField>
-      <FormControl>
-        <InputLabel>Insurance</InputLabel>
-        <Select
-          value={insurance}
-          label="Insurance"
-          onChange={(event: SelectChangeEvent) =>
-            setInsurance(event.target.value as string)
-          }
-        >
-          {insuranceProviders.map((provider: string) => (
-            <MenuItem value={provider}>{provider}</MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      <FormControl>
-        <InputLabel>Type</InputLabel>
-        <Select
-          value={type}
-          label="Type"
-          onChange={(event: SelectChangeEvent) =>
-            setType(event.target.value as string)
-          }
-        >
-          {healthCareServices.map((service: string) => (
-            <MenuItem value={service}>{service}</MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      <div className="ff-submit">Submit</div>
+    <div className="form">
+      <div
+        onClick={() => setShowForm(false)}
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          padding: '1rem',
+          fontSize: '20px',
+          cursor: 'pointer',
+        }}
+      >
+        x
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          alignItems: 'center ',
+        }}
+      >
+        <div className="ff-input">
+          <TextField
+            label="Distance"
+            value={distance}
+            fullWidth
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              setDistance(Number(event.target.value))
+            }
+          ></TextField>
+        </div>
+        <div className="ff-input">
+          <TextField
+            label="Zip Code"
+            value={zipCode}
+            fullWidth
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              setZipCode(event.target.value)
+            }
+          ></TextField>
+        </div>
+        <div className="ff-input">
+          <FormControl fullWidth>
+            <InputLabel>Insurance</InputLabel>
+            <Select
+              value={insurance}
+              label="Insurance"
+              onChange={(event: SelectChangeEvent) =>
+                setInsurance(event.target.value as string)
+              }
+            >
+              {insuranceProviders.map((provider: string) => (
+                <MenuItem value={provider}>{provider}</MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </div>
+        <div className="ff-input">
+          <FormControl fullWidth>
+            <InputLabel>Type</InputLabel>
+            <Select
+              value={type}
+              label="Type"
+              onChange={(event: SelectChangeEvent) =>
+                setType(event.target.value as string)
+              }
+            >
+              {healthCareServices.map((service: string) => (
+                <MenuItem value={service}>{service}</MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </div>
+        <div className="ff-submit">Submit</div>
+      </div>
     </div>
   );
 }
