@@ -1,8 +1,13 @@
+import { useState } from "react"
+import LandingPage from "./pages/Landing_Page";
+import "./App.css"
+
 function App() {
+  const [currentPage, setCurrentPage] = useState<number>(0);
 
   return (
-    <div>
-      Hello
+    <div className="app">
+      {currentPage === 0 && <LandingPage></LandingPage>}
     </div>
   )
 }
