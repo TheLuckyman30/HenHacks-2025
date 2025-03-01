@@ -5,4 +5,29 @@
     justify-content: center;
     text-align: center;
     display: flex;
+    flex-direction: column;
+}
+
+.lp-title {
+    font-size: 50px;
+    padding: 3rem;
+}
+
+.lp-button {
+    cursor: pointer;
+    font-size: 25px;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 15px;
+    background-color: rgb(97, 179, 97);
+    color: white;
+    transition: 0.2s;
+}
+
+.lp-button:hover {
+    transform: translateY(-5px);
+}
+
+.lp-dropdwon {
+    width: 50px
 }
