@@ -1,0 +1,154 @@
+[
+  {
+    "name": "Pinecrest Family Clinic",
+    "address": "123 Maple St, Springfield, IL",
+    "distance": 12,
+    "zipCode": "62704",
+    "healthInsurance": ["VitalCare Insurance", "Harmony Health Plan"],
+    "type": "Primary Care"
+  },
+  {
+    "name": "Evergreen Dental Center",
+    "address": "456 Oak Ave, Springfield, IL",
+    "distance": 8,
+    "zipCode": "62704",
+    "healthInsurance": ["EverTrust Medical", "NovaGuard Health"],
+    "type": "Dentistry"
+  },
+  {
+    "name": "Summit Mental Health",
+    "address": "789 Pine St, Springfield, IL",
+    "distance": 20,
+    "zipCode": "62705",
+    "healthInsurance": ["BluePeak Coverage", "VitalCare Insurance"],
+    "type": "Mental Health"
+  },
+  {
+    "name": "Hope Pediatrics",
+    "address": "101 Birch Rd, Chicago, IL",
+    "distance": 15,
+    "zipCode": "60601",
+    "healthInsurance": ["Harmony Health Plan", "EverTrust Medical"],
+    "type": "Pediatrics"
+  },
+  {
+    "name": "Sunrise Cardiology Center",
+    "address": "202 Elm St, Chicago, IL",
+    "distance": 30,
+    "zipCode": "60602",
+    "healthInsurance": ["NovaGuard Health", "BluePeak Coverage"],
+    "type": "Cardiology"
+  },
+  {
+    "name": "Metro Orthopedic Clinic",
+    "address": "303 Walnut St, Chicago, IL",
+    "distance": 40,
+    "zipCode": "60603",
+    "healthInsurance": ["VitalCare Insurance", "EverTrust Medical"],
+    "type": "Orthopedics"
+  },
+  {
+    "name": "Lakeside Women's Health",
+    "address": "404 Cedar Blvd, Milwaukee, WI",
+    "distance": 10,
+    "zipCode": "53201",
+    "healthInsurance": ["Harmony Health Plan", "NovaGuard Health"],
+    "type": "Obstetrics & Gynecology"
+  },
+  {
+    "name": "Summit Physical Therapy",
+    "address": "505 Aspen Dr, Milwaukee, WI",
+    "distance": 5,
+    "zipCode": "53202",
+    "healthInsurance": ["BluePeak Coverage", "EverTrust Medical"],
+    "type": "Physical Therapy"
+  },
+  {
+    "name": "Bright Future Pediatrics",
+    "address": "606 Redwood Ln, Madison, WI",
+    "distance": 25,
+    "zipCode": "53703",
+    "healthInsurance": ["VitalCare Insurance", "Harmony Health Plan"],
+    "type": "Pediatrics"
+  },
+  {
+    "name": "Tranquil Mind Psychiatry",
+    "address": "707 Spruce St, Madison, WI",
+    "distance": 18,
+    "zipCode": "53704",
+    "healthInsurance": ["EverTrust Medical", "NovaGuard Health"],
+    "type": "Psychiatry"
+  },
+  {
+    "name": "Greenfield Eye Care",
+    "address": "808 Cypress Ave, Indianapolis, IN",
+    "distance": 35,
+    "zipCode": "46201",
+    "healthInsurance": ["BluePeak Coverage", "VitalCare Insurance"],
+    "type": "Ophthalmology"
+  },
+  {
+    "name": "Heritage Dental Group",
+    "address": "909 Juniper Rd, Indianapolis, IN",
+    "distance": 42,
+    "zipCode": "46202",
+    "healthInsurance": ["Harmony Health Plan", "EverTrust Medical"],
+    "type": "Dentistry"
+  },
+  {
+    "name": "Starlight Urgent Care",
+    "address": "111 Pearl St, Louisville, KY",
+    "distance": 7,
+    "zipCode": "40201",
+    "healthInsurance": ["NovaGuard Health", "BluePeak Coverage"],
+    "type": "Urgent Care"
+  },
+  {
+    "name": "Wellness Endocrinology Center",
+    "address": "222 Diamond Ave, Louisville, KY",
+    "distance": 28,
+    "zipCode": "40202",
+    "healthInsurance": ["VitalCare Insurance", "EverTrust Medical"],
+    "type": "Endocrinology"
+  },
+  {
+    "name": "Riverside Oncology Center",
+    "address": "333 Sapphire Rd, Nashville, TN",
+    "distance": 50,
+    "zipCode": "37201",
+    "healthInsurance": ["Harmony Health Plan", "NovaGuard Health"],
+    "type": "Oncology"
+  },
+  {
+    "name": "Meadowbrook Family Medicine",
+    "address": "444 Willow St, Nashville, TN",
+    "distance": 60,
+    "zipCode": "37202",
+    "healthInsurance": ["BluePeak Coverage", "EverTrust Medical"],
+    "type": "Primary Care"
+  },
+  {
+    "name": "Hilltop Psychiatry Center",
+    "address": "555 Cedar Lane, Memphis, TN",
+    "distance": 70,
+    "zipCode": "38101",
+    "healthInsurance": ["VitalCare Insurance", "NovaGuard Health"],
+    "type": "Mental Health"
+  },
+  {
+    "name": "Spring Valley Orthopedic Clinic",
+    "address": "666 Fir Dr, St. Louis, MO",
+    "distance": 55,
+    "zipCode": "63101",
+    "healthInsurance": ["Harmony Health Plan", "BluePeak Coverage"],
+    "type": "Orthopedics"
+  },
+  {
+    "name": "Gateway Women's Health",
+    "address": "777 Pine Ridge Rd, St. Louis, MO",
+    "distance": 45,
+    "zipCode": "63102",
+    "healthInsurance": ["EverTrust Medical", "NovaGuard Health"],
+    "type": "Obstetrics & Gynecology"
+  }
+]
