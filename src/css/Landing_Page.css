@@ -26,5 +26,8 @@
 
 .lp-button:hover {
     transform: translateY(-5px);
-    
+}
+
+.lp-dropdwon {
+    width: 50px
 }
