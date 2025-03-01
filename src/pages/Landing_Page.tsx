@@ -8,51 +8,80 @@ import {
   SelectChangeEvent,
 } from '@mui/material';
 import healthCareProviders from './../data/hcp.json';
+import FindForm from '../components/FindForm';
+import { HealthCareProvider } from '../interfaces/HealthCareProvider';
 
 function LandingPage() {
-  const [button1Click, setbutton1Click] = useState<boolean>(false);
-  const [button2Click, setbutton2Click] = useState<boolean>(false);
-  const [hcp, sethcp] = useState<string>('');
-  const [hcpInRange, sethcpInRange] = useState<string[]>(['test1', 'test2']);
+  const INSURANCE_PROVIDERS = [
+    'VitalCare Insurance',
+    'Harmony Health Plan',
+    'EverTrust Medical',
+    'NovaGuard Health',
+    'BluePeak Coverage',
+  ];
 
-  function handleChange(event: SelectChangeEvent) {
-    sethcp(event.target.value as string);
+  const HEALTHCARE_SERVICES = [
+    'Primary Care',
+    'Dentistry',
+    'Mental Health',
+    'Pediatrics',
+    'Cardiology',
+    'Orthopedics',
+    'Obstetrics & Gynecology',
+    'Physical Therapy',
+    'Psychiatry',
+    'Ophthalmology',
+    'Urgent Care',
+    'Endocrinology',
+    'Oncology',
+  ];
+
+  const [showForm, setShowForm] = useState<boolean>(false);
+  const [selectedHcp, setSelectedHcp] = useState<string>('');
+  const [hcpInRange, sethcpInRange] = useState<HealthCareProvider[]>([]);
+
+  // These are for setting filter options
+  const [distance, setDistance] = useState<number>(0);
+  const [zipCode, setzipCode] = useState<string>('');
+  const [insurance, setInurance] = useState<string>('');
+  const [type, setType] = useState<string>('');
+
+  function formControl() {
+    setShowForm(!showForm);
+  }
+
+  function filterHcpInRange() {
+    sethcpInRange(
+      healthCareProviders.filter((hcp: HealthCareProvider) => {
+        if (hcp.zipCode === zipCode) {
+          return hcp;
+        }
+      })
+    );
   }
 
   return (
     <div className="lp">
       <div className="lp-title">Welcome to your Health Care Portal</div>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
-        <div
-          onClick={() => setbutton1Click(!button1Click)}
-          className="lp-button"
-        >
-          Button 1
-        </div>
-        <div
-          onClick={() => setbutton2Click(!button2Click)}
-          className="lp-button"
-        >
-          Button 2
+        <div onClick={formControl} className="lp-button">
+          Find doctors with insurance
         </div>
       </div>
-      {button1Click && (
+      {showForm && (
         <div>
-          <FormControl style={{ width: '5rem' }}>
-            <InputLabel></InputLabel>
-            <Select value={hcp} label="" onChange={handleChange}>
-              <MenuItem value={'1'}>One</MenuItem>
-              <MenuItem value={'2'}>Two</MenuItem>
-              <MenuItem value={'3'}>Three</MenuItem>
-            </Select>
-          </FormControl>
-        </div>
-      )}
-      {button2Click && (
-        <div>
-          {healthCareProviders.map((hc) => (
-            <div>{hc.name}</div>
-          ))}
+          <FindForm
+            insuranceProviders={INSURANCE_PROVIDERS}
+            healthCareServices={HEALTHCARE_SERVICES}
+            distance={distance}
+            zipCode={zipCode}
+            insurance={insurance}
+            type={type}
+            setDistance={setDistance}
+            setZipCode={setzipCode}
+            setInsurance={setInurance}
+            setType={setType}
+          ></FindForm>
         </div>
       )}
     </div>
