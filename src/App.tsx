@@ -19,7 +19,6 @@ function App() {
           setFilteredProviders={setFilteredProviders}
         ></LandingPage>
       )}
-      {currentPage}
       {currentPage === 1 && (
         <FilteredResults
           filteredProviders={filteredProviders}

@@ -88,6 +88,22 @@ function FindForm({
         }}
       >
         <div className="ff-input">
+          <FormControl fullWidth>
+            <InputLabel>Insurance</InputLabel>
+            <Select
+              value={insurance}
+              label="Insurance"
+              onChange={(event: SelectChangeEvent) =>
+                setInsurance(event.target.value as string)
+              }
+            >
+              {insuranceProviders.map((provider: string) => (
+                <MenuItem value={provider}>{provider}</MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </div>
+        <div className="ff-input">
           <TextField
             label="Distance"
             value={distance}
@@ -109,22 +125,6 @@ function FindForm({
         </div>
         <div className="ff-input">
           <FormControl fullWidth>
-            <InputLabel>Insurance</InputLabel>
-            <Select
-              value={insurance}
-              label="Insurance"
-              onChange={(event: SelectChangeEvent) =>
-                setInsurance(event.target.value as string)
-              }
-            >
-              {insuranceProviders.map((provider: string) => (
-                <MenuItem value={provider}>{provider}</MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </div>
-        <div className="ff-input">
-          <FormControl fullWidth>
             <InputLabel>Type</InputLabel>
             <Select
               value={type}
@@ -139,7 +139,10 @@ function FindForm({
             </Select>
           </FormControl>
         </div>
-        <div onClick={submit} className="ff-submit">
+        <div
+          onClick={submit}
+          className={insurance ? 'ff-submit' : 'ff-disabled'}
+        >
           Submit
         </div>
       </div>
