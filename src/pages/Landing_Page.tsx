@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './../css/Landing_Page.css';
 import FindForm from '../components/FindForm';
+import Footer from '../components/Footer';
 import { HealthCareProvider } from '../interfaces/HealthCareProvider';
 
 interface LandingPageProps {
@@ -39,10 +40,16 @@ function LandingPage({
   }
 
   return (
-      <div className="lp background" >
+    <div>
+      <div className=" background" >
+        <section style={{backgroundColor: "white"}}>
+          <h1>mewo</h1>
+          <p>meow</p>
+
+        </section>
         
-        <div className= "parent" style={{ display: 'flex', flexDirection: 'row' }}>
-        <div className= "child">
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <div >
       </div>
           <div onClick={formControl} className="lp-button">
             Find doctors with insurance
@@ -67,6 +74,8 @@ function LandingPage({
           ></FindForm>
         </div>
       )}
+      </div>
+      <Footer></Footer>
     </div>
   );
 }
