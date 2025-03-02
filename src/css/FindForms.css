@@ -18,3 +18,11 @@
     border-radius: 15px;
     width: 10rem;
 }
+
+.ff-disabled {
+    pointer-events: none;
+    background-color: rgb(123, 124, 123);
+    padding: 1rem;
+    border-radius: 15px;
+    width: 10rem;
+}

@@ -1,39 +1,38 @@
 import { useState } from 'react';
 import './../css/Landing_Page.css';
 import FindForm from '../components/FindForm';
+import { HealthCareProvider } from '../interfaces/HealthCareProvider';
 
-function LandingPage() {
-  const INSURANCE_PROVIDERS = [
-    'VitalCare Insurance',
-    'Harmony Health Plan',
-    'EverTrust Medical',
-    'NovaGuard Health',
-    'BluePeak Coverage',
-  ];
+interface LandingPageProps {
+  insuranceProviders: string[];
+  healthCareServices: string[];
+  distance: number;
+  zipCode: string;
+  insurance: string;
+  type: string;
+  setDistance: (distance: number) => void;
+  setZipCode: (zipCode: string) => void;
+  setInsurance: (insurance: string) => void;
+  setType: (type: string) => void;
+  setCurrentPage: (page: number) => void;
+  setFilteredProviders: (providers: HealthCareProvider[]) => void;
+}
 
-  const HEALTHCARE_SERVICES = [
-    'Primary Care',
-    'Dentistry',
-    'Mental Health',
-    'Pediatrics',
-    'Cardiology',
-    'Orthopedics',
-    'Obstetrics & Gynecology',
-    'Physical Therapy',
-    'Psychiatry',
-    'Ophthalmology',
-    'Urgent Care',
-    'Endocrinology',
-    'Oncology',
-  ];
-
+function LandingPage({
+  insuranceProviders,
+  healthCareServices,
+  distance,
+  zipCode,
+  insurance,
+  type,
+  setDistance,
+  setZipCode,
+  setInsurance,
+  setType,
+  setCurrentPage,
+  setFilteredProviders,
+}: LandingPageProps) {
   const [showForm, setShowForm] = useState<boolean>(false);
-
-  // These are for setting filter options
-  const [distance, setDistance] = useState<number>(0);
-  const [zipCode, setzipCode] = useState<string>('');
-  const [insurance, setInurance] = useState<string>('');
-  const [type, setType] = useState<string>('');
 
   function formControl() {
     setShowForm(!showForm);
@@ -50,17 +49,19 @@ function LandingPage() {
       {showForm && (
         <div style={{ position: 'fixed', zIndex: '1000' }}>
           <FindForm
-            insuranceProviders={INSURANCE_PROVIDERS}
-            healthCareServices={HEALTHCARE_SERVICES}
+            insuranceProviders={insuranceProviders}
+            healthCareServices={healthCareServices}
             distance={distance}
             zipCode={zipCode}
             insurance={insurance}
             type={type}
             setDistance={setDistance}
-            setZipCode={setzipCode}
-            setInsurance={setInurance}
+            setZipCode={setZipCode}
+            setInsurance={setInsurance}
             setType={setType}
             setShowForm={setShowForm}
+            setCurrentPage={setCurrentPage}
+            setFilteredProviders={setFilteredProviders}
           ></FindForm>
         </div>
       )}

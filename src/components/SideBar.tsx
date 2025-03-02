@@ -6,9 +6,9 @@ import {
   SelectChangeEvent,
   TextField,
 } from '@mui/material';
-import './../css/FindForms.css';
 import { HealthCareProvider } from '../interfaces/HealthCareProvider';
 import healthCareProviders from './../data/hcp.json';
+import './../css/SideBar.css';
 
 interface FindFormProps {
   insuranceProviders: string[];
@@ -21,12 +21,11 @@ interface FindFormProps {
   setZipCode: (zipCode: string) => void;
   setInsurance: (insurance: string) => void;
   setType: (type: string) => void;
-  setShowForm: (show: boolean) => void;
   setCurrentPage: (page: number) => void;
   setFilteredProviders: (providers: HealthCareProvider[]) => void;
 }
 
-function FindForm({
+function SideBar({
   insuranceProviders,
   healthCareServices,
   distance,
@@ -37,13 +36,10 @@ function FindForm({
   setZipCode,
   setInsurance,
   setType,
-  setShowForm,
   setCurrentPage,
   setFilteredProviders,
 }: FindFormProps) {
   function submit() {
-    setCurrentPage(1);
-    setShowForm(false);
     setFilteredProviders(
       healthCareProviders.filter((hcp: HealthCareProvider) => {
         let isGood: boolean = true;
@@ -66,28 +62,9 @@ function FindForm({
   }
 
   return (
-    <div className="form">
-      <div
-        onClick={() => setShowForm(false)}
-        style={{
-          display: 'flex',
-          justifyContent: 'flex-end',
-          padding: '1rem',
-          fontSize: '20px',
-          cursor: 'pointer',
-        }}
-      >
-        x
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          alignItems: 'center ',
-        }}
-      >
-        <div className="ff-input">
+    <div>
+      <div className="sb">
+        <div className="sb-input">
           <FormControl fullWidth>
             <InputLabel>Insurance</InputLabel>
             <Select
@@ -103,7 +80,7 @@ function FindForm({
             </Select>
           </FormControl>
         </div>
-        <div className="ff-input">
+        <div className="sb-input">
           <TextField
             label="Distance"
             value={distance}
@@ -113,7 +90,7 @@ function FindForm({
             }
           ></TextField>
         </div>
-        <div className="ff-input">
+        <div className="sb-input">
           <TextField
             label="Zip Code"
             value={zipCode}
@@ -123,7 +100,7 @@ function FindForm({
             }
           ></TextField>
         </div>
-        <div className="ff-input">
+        <div className="sb-input">
           <FormControl fullWidth>
             <InputLabel>Type</InputLabel>
             <Select
@@ -139,10 +116,7 @@ function FindForm({
             </Select>
           </FormControl>
         </div>
-        <div
-          onClick={submit}
-          className={insurance ? 'ff-submit' : 'ff-disabled'}
-        >
+        <div className="sb-button" onClick={submit}>
           Submit
         </div>
       </div>
@@ -150,4 +124,4 @@ function FindForm({
   );
 }
 
-export default FindForm;
+export default SideBar;
