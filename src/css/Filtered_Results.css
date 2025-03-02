@@ -1,6 +1,18 @@
+.fr {
+    display: flex;
+    width: 100%;
+}
+
+.fr-side-bar {
+    width: fit-content;
+    border-right: 1px solid black;
+}
+
 .fr-box {
+    display: flex;
     padding: 1rem;
-    margin: 2rem;
+    margin: 1rem;
+    width: 50%;
     border: 2px solid black;
     border-radius: 15px;
 }

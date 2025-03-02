@@ -8,6 +8,7 @@ import {
 } from '@mui/material';
 import { HealthCareProvider } from '../interfaces/HealthCareProvider';
 import healthCareProviders from './../data/hcp.json';
+import './../css/SideBar.css';
 
 interface FindFormProps {
   insuranceProviders: string[];
@@ -39,7 +40,6 @@ function SideBar({
   setFilteredProviders,
 }: FindFormProps) {
   function submit() {
-    setCurrentPage(1);
     setFilteredProviders(
       healthCareProviders.filter((hcp: HealthCareProvider) => {
         let isGood: boolean = true;
@@ -51,7 +51,7 @@ function SideBar({
             isGood = false;
           }
           if (type && hcp.type !== type) {
-            isGood;
+            isGood = false;
           }
           if (isGood) {
             return hcp;
@@ -63,8 +63,8 @@ function SideBar({
 
   return (
     <div>
-      <div>
-        <div>
+      <div className="sb">
+        <div className="sb-input">
           <FormControl fullWidth>
             <InputLabel>Insurance</InputLabel>
             <Select
@@ -80,7 +80,7 @@ function SideBar({
             </Select>
           </FormControl>
         </div>
-        <div>
+        <div className="sb-input">
           <TextField
             label="Distance"
             value={distance}
@@ -90,7 +90,7 @@ function SideBar({
             }
           ></TextField>
         </div>
-        <div>
+        <div className="sb-input">
           <TextField
             label="Zip Code"
             value={zipCode}
@@ -100,7 +100,7 @@ function SideBar({
             }
           ></TextField>
         </div>
-        <div>
+        <div className="sb-input">
           <FormControl fullWidth>
             <InputLabel>Type</InputLabel>
             <Select
@@ -116,7 +116,9 @@ function SideBar({
             </Select>
           </FormControl>
         </div>
-        <div onClick={submit}>Submit</div>
+        <div className="sb-button" onClick={submit}>
+          Submit
+        </div>
       </div>
     </div>
   );

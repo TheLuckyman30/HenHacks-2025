@@ -55,7 +55,7 @@ function FindForm({
             isGood = false;
           }
           if (type && hcp.type !== type) {
-            isGood;
+            isGood = false;
           }
           if (isGood) {
             return hcp;

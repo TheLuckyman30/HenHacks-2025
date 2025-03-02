@@ -35,8 +35,8 @@ function FilteredResults({
   setFilteredProviders,
 }: FilteredResultsProps) {
   return (
-    <div style={{ width: '100%', display: 'flex' }}>
-      <div style={{ width: 'fit-content' }}>
+    <div className="fr">
+      <div className="fr-side-bar">
         <SideBar
           insuranceProviders={insuranceProviders}
           healthCareServices={healthCareServices}
@@ -63,11 +63,16 @@ function FilteredResults({
       >
         {filteredProviders.map((provider: HealthCareProvider) => (
           <div className="fr-box">
-            <img src={medOffice}></img>
-            <div>{provider.name}</div>
-            <div>{provider.address}</div>
-            <div>{provider.distance + ' miles'}</div>
-            <div>{provider.zipCode}</div>
+            <img
+              style={{ width: '300px', height: '300px' }}
+              src={medOffice}
+            ></img>
+            <div style={{ marginLeft: '1rem' }}>
+              <div>{'Name: ' + provider.name}</div>
+              <div>{'Address: ' + provider.address}</div>
+              <div>{'Distance: ' + provider.distance + ' miles'}</div>
+              <div>{'Zipcode: ' + provider.zipCode}</div>
+            </div>
           </div>
         ))}
       </div>
