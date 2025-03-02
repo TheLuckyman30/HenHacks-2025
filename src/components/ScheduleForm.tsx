@@ -60,7 +60,7 @@ function ScheduleForm({
   }
 
   return (
-    <div className="sf">
+    <div className="sf ">
       <div>
         <div onClick={() => setShowScheduleForm(false)} className="sf-x">
           X
