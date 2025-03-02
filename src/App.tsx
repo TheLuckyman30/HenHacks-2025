@@ -92,7 +92,14 @@ function App() {
           setAppointments={setAppointments}
         ></FilteredResults>
       )}
-      {currentPage === 2 && <Scheduler appointments={appointments}></Scheduler>}
+      {currentPage === 2 && (
+        <Scheduler
+          allProviders={allProviders}
+          appointments={appointments}
+          setAllProviders={setAllProviders}
+          setAppointments={setAppointments}
+        ></Scheduler>
+      )}
     </div>
   );
 }
