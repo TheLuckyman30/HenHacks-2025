@@ -7,7 +7,7 @@ interface NavBarProps {
 
 const PAGES = [
   { name: 'Home', number: 0 },
-  { name: 'Schedule', number: 2 },
+  { name: 'Schedule', number: 1 },
   { name: 'My Appts.', number: 2 },
 ];
 //const SETTINGS = ['Profile', 'Account', 'myAppts', 'Logout'];

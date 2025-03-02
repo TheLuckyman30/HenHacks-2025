@@ -36,14 +36,15 @@ function Scheduler({
     <div className="sc">
       <div className="sc-container">
         {appointments.map((appointment: ProviderAndAppt) => (
-          <div
-            style={{ display: 'flex', margin: '1rem', alignItems: 'center' }}
-          >
+          <div className="sc-appts">
             <div>
-              <div style={{ fontWeight: 'bold' }}>
+              <div style={{ fontWeight: 'bold', fontSize: '20px' }}>
                 {appointment.healthCareProvider.name}
               </div>
-              <div>
+              <div style={{ fontSize: '18px' }}>
+                {'Type: ' + appointment.healthCareProvider.type}
+              </div>
+              <div style={{ fontSize: '18px' }}>
                 {appointment.appts.day +
                   ' ' +
                   appointment.appts.month +
@@ -57,10 +58,11 @@ function Scheduler({
               onClick={() =>
                 cancel(appointment.healthCareProvider, appointment.appts)
               }
-              style={{ margin: '5rem', padding: '1rem' }}
+              className="sc-cancel"
             >
               Cancel
             </div>
+            <div className="sc-non-working">Reschedule</div>
           </div>
         ))}
       </div>
