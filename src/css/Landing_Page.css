@@ -22,6 +22,13 @@
     background-color: rgb(97, 179, 97);
     color: white;
     transition: 0.2s;
+    min-height: 60px;
+    min-width: 200px; /* Adjust width if necessary */
+    
+    display: flex; /* Add this */
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    text-align: center;
 }
 
 .lp-button:hover {
