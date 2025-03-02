@@ -59,22 +59,11 @@ function FilteredResults({
           setFilteredProviders={setFilteredProviders}
         ></SideBar>
       </div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: '100%',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
+      <div className="fr-container">
         {filteredProviders.map((provider: HealthCareProvider) => (
           <div className="fr-box">
-            <img
-              style={{ width: '300px', height: '300px' }}
-              src={medOffice}
-            ></img>
-            <div style={{ marginLeft: '1rem' }}>
+            <img className="fr-image" src={medOffice}></img>
+            <div className="fr-margin-left">
               <div>{'Name: ' + provider.name}</div>
               <div>{'Address: ' + provider.address}</div>
               <div>{'Distance: ' + provider.distance + ' miles'}</div>
@@ -93,16 +82,7 @@ function FilteredResults({
         ))}
       </div>
       {showScheduleForm && (
-        <div
-          style={{
-            width: '100%',
-            height: '100%',
-            position: 'fixed',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
+        <div className="fr-sf-container">
           <ScheduleForm
             selectedHcp={selectedHcp}
             setShowScheduleForm={setShowScheduleForm}

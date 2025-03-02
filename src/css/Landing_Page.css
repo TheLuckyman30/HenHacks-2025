@@ -13,6 +13,11 @@
     padding: 3rem;
 }
 
+.lp-button-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .lp-button {
     cursor: pointer;
     font-size: 25px;
@@ -26,6 +31,11 @@
 
 .lp-button:hover {
     transform: translateY(-5px);
+}
+
+.lp-ff-container {
+    position: fixed;
+    z-index: 1000;
 }
 
 .lp-dropdwon {

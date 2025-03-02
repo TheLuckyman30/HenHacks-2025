@@ -4,6 +4,8 @@ import './App.css';
 import { HealthCareProvider } from './interfaces/HealthCareProvider';
 import FilteredResults from './pages/Filtered_Results';
 import Scheduler from './pages/Scheduler';
+import { Appointment } from './interfaces/Appointment';
+import healthCareProviders from './data/hcp.json';
 
 function App() {
   const INSURANCE_PROVIDERS = [
@@ -30,6 +32,8 @@ function App() {
     'Oncology',
   ];
 
+  const [allProviders, setAllProviders] =
+    useState<HealthCareProvider[]>(healthCareProviders);
   const [currentPage, setCurrentPage] = useState<number>(0);
   const [filteredProviders, setFilteredProviders] = useState<
     HealthCareProvider[]
@@ -37,6 +41,7 @@ function App() {
   const [selectedHcp, setSelectedHCP] = useState<
     HealthCareProvider | undefined
   >();
+  const [appointments, setAppointments] = useState<Appointment[]>([]);
 
   // These are for setting filter options
   const [distance, setDistance] = useState<number>(0);
@@ -48,6 +53,7 @@ function App() {
     <div className="app">
       {currentPage === 0 && (
         <LandingPage
+          allProviders={allProviders}
           insuranceProviders={INSURANCE_PROVIDERS}
           healthCareServices={HEALTHCARE_SERVICES}
           distance={distance}

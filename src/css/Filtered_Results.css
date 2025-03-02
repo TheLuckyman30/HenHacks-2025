@@ -8,6 +8,32 @@
     border-right: 1px solid black;
 }
 
+.fr-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.fr-image {
+    height: 300px;
+    width: 300px;
+}
+
+.fr-margin-left {
+    margin-left: 1rem;
+}
+
+.fr-sf-container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .fr-box {
     display: flex;
     padding: 1rem;

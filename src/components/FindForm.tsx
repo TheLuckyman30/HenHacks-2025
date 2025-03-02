@@ -8,9 +8,9 @@ import {
 } from '@mui/material';
 import './../css/FindForms.css';
 import { HealthCareProvider } from '../interfaces/HealthCareProvider';
-import healthCareProviders from './../data/hcp.json';
 
 interface FindFormProps {
+  allProviders: HealthCareProvider[];
   insuranceProviders: string[];
   healthCareServices: string[];
   distance: number;
@@ -27,6 +27,7 @@ interface FindFormProps {
 }
 
 function FindForm({
+  allProviders,
   insuranceProviders,
   healthCareServices,
   distance,
@@ -45,7 +46,7 @@ function FindForm({
     setCurrentPage(1);
     setShowForm(false);
     setFilteredProviders(
-      healthCareProviders.filter((hcp: HealthCareProvider) => {
+      allProviders.filter((hcp: HealthCareProvider) => {
         let isGood: boolean = true;
         if (hcp.healthInsurance.includes(insurance)) {
           if (zipCode && hcp.zipCode !== zipCode) {
@@ -67,26 +68,10 @@ function FindForm({
 
   return (
     <div className="form">
-      <div
-        onClick={() => setShowForm(false)}
-        style={{
-          display: 'flex',
-          justifyContent: 'flex-end',
-          padding: '1rem',
-          fontSize: '20px',
-          cursor: 'pointer',
-        }}
-      >
+      <div onClick={() => setShowForm(false)} className="ff-x">
         x
       </div>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          alignItems: 'center ',
-        }}
-      >
+      <div className="ff-input-container">
         <div className="ff-input">
           <FormControl fullWidth>
             <InputLabel>Insurance</InputLabel>

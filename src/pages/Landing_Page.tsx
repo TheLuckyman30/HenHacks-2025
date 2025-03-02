@@ -4,6 +4,7 @@ import FindForm from '../components/FindForm';
 import { HealthCareProvider } from '../interfaces/HealthCareProvider';
 
 interface LandingPageProps {
+  allProviders: HealthCareProvider[];
   insuranceProviders: string[];
   healthCareServices: string[];
   distance: number;
@@ -19,6 +20,7 @@ interface LandingPageProps {
 }
 
 function LandingPage({
+  allProviders,
   insuranceProviders,
   healthCareServices,
   distance,
@@ -41,14 +43,15 @@ function LandingPage({
   return (
     <div className="lp">
       <div className="lp-title">Welcome to your Health Care Portal</div>
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <div className="lp-button-container">
         <div onClick={formControl} className="lp-button">
           Find doctors with insurance
         </div>
       </div>
       {showForm && (
-        <div style={{ position: 'fixed', zIndex: '1000' }}>
+        <div className="lp-ff-container">
           <FindForm
+            allProviders={allProviders}
             insuranceProviders={insuranceProviders}
             healthCareServices={healthCareServices}
             distance={distance}

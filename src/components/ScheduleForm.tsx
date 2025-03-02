@@ -1,5 +1,6 @@
 import { Appointment } from '../interfaces/Appointment';
 import { HealthCareProvider } from '../interfaces/HealthCareProvider';
+import './../css/ScheduleForm.css';
 
 interface ScheduleFormProps {
   selectedHcp: HealthCareProvider | undefined;
@@ -8,44 +9,17 @@ interface ScheduleFormProps {
 
 function ScheduleForm({ selectedHcp, setShowScheduleForm }: ScheduleFormProps) {
   return (
-    <div
-      style={{
-        backgroundColor: 'white',
-        border: '1px solid black',
-      }}
-    >
+    <div className="sf">
       <div>
-        <div
-          onClick={() => setShowScheduleForm(false)}
-          style={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            paddingRight: '1rem',
-            fontSize: '20px',
-            cursor: 'pointer',
-          }}
-        >
+        <div onClick={() => setShowScheduleForm(false)} className="sf-x">
           X
         </div>
-        <div
-          style={{
-            padding: '1rem',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
+        <div className="sf-container">
           <div>Available Appoitments:</div>
           {selectedHcp &&
             selectedHcp.appointments.map((appointment: Appointment) => (
-              <div style={{ margin: '1rem', display: 'flex' }}>
-                <div
-                  style={{
-                    padding: '1rem',
-                    border: '1px solid black',
-                    borderRadius: '15px',
-                  }}
-                >
+              <div className="sf-appointment-container">
+                <div className="sf-appointment">
                   {appointment.day +
                     ' ' +
                     appointment.month +
