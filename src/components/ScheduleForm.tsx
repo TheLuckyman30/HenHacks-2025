@@ -1,15 +1,16 @@
 import { Appointment } from '../interfaces/Appointment';
 import { HealthCareProvider } from '../interfaces/HealthCareProvider';
+import { ProviderAndAppt } from '../interfaces/ProviderAndAppt';
 import './../css/ScheduleForm.css';
 
 interface ScheduleFormProps {
-  appointments: Appointment[];
+  appointments: ProviderAndAppt[];
   allProviders: HealthCareProvider[];
   filteredProviders: HealthCareProvider[];
   selectedHcp: HealthCareProvider | undefined;
   setShowScheduleForm: (showScheduleForm: boolean) => void;
   setAllProviders: (allProviders: HealthCareProvider[]) => void;
-  setAppointments: (appointments: Appointment[]) => void;
+  setAppointments: (appointments: ProviderAndAppt[]) => void;
   setSelectedHCP: (selectedHcp: HealthCareProvider) => void;
   setFilteredProviders: (filteredProviders: HealthCareProvider[]) => void;
 }
@@ -50,7 +51,12 @@ function ScheduleForm({
         filtered.name !== selectedHcp?.name ? filtered : selectedHcp
       )
     );
-    setAppointments([...appointments, appointment]);
+    selectedHcp
+      ? setAppointments([
+          ...appointments,
+          { healthCareProvider: selectedHcp, appts: appointment },
+        ])
+      : 0;
   }
 
   return (

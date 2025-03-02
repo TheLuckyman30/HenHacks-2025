@@ -1,0 +1,12 @@
+.sc {
+    width: 100%;
+    height: 100%;
+}
+
+.sc-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

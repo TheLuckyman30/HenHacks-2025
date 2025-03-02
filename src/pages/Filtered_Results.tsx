@@ -4,10 +4,10 @@ import medOffice from './../assets/medOffice.jpg';
 import SideBar from '../components/SideBar';
 import ScheduleForm from '../components/ScheduleForm';
 import { useState } from 'react';
-import { Appointment } from '../interfaces/Appointment';
+import { ProviderAndAppt } from '../interfaces/ProviderAndAppt';
 
 interface FilteredResultsProps {
-  appointments: Appointment[];
+  appointments: ProviderAndAppt[];
   allProviders: HealthCareProvider[];
   filteredProviders: HealthCareProvider[];
   insuranceProviders: string[];
@@ -24,7 +24,7 @@ interface FilteredResultsProps {
   setFilteredProviders: (providers: HealthCareProvider[]) => void;
   setSelectedHcp: (selectedHcp: HealthCareProvider) => void;
   setAllProviders: (allProviders: HealthCareProvider[]) => void;
-  setAppointments: (appointments: Appointment[]) => void;
+  setAppointments: (appointments: ProviderAndAppt[]) => void;
 }
 
 function FilteredResults({

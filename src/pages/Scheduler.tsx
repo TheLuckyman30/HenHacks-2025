@@ -1,20 +1,36 @@
-import { HealthCareProvider } from '../interfaces/HealthCareProvider';
+import { ProviderAndAppt } from '../interfaces/ProviderAndAppt';
+import './../css/Scheduler.css';
 
 interface SchedulerProps {
-  selectedHcp: HealthCareProvider | undefined;
+  appointments: ProviderAndAppt[];
 }
 
-function Scheduler({ selectedHcp }: SchedulerProps) {
+function Scheduler({ appointments }: SchedulerProps) {
   return (
-    <div>
-      {selectedHcp && (
-        <div>
-          <div>{selectedHcp.name}</div>
-          <div>{selectedHcp.address}</div>
-          <div>{selectedHcp.zipCode}</div>
-          <div>{selectedHcp.healthInsurance}</div>
-        </div>
-      )}
+    <div className="sc">
+      <div className="sc-container">
+        {appointments.map((appointment: ProviderAndAppt) => (
+          <div
+            style={{ display: 'flex', margin: '1rem', alignItems: 'center' }}
+          >
+            <div>
+              <div style={{ fontWeight: 'bold' }}>
+                {appointment.healthCareProvider.name}
+              </div>
+              <div>
+                {appointment.appts.day +
+                  ' ' +
+                  appointment.appts.month +
+                  ' ' +
+                  appointment.appts.year +
+                  ' ' +
+                  appointment.appts.time}
+              </div>
+            </div>
+            <div style={{ margin: '5rem', padding: '1rem' }}>Cancel</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

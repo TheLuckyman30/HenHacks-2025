@@ -4,9 +4,9 @@ import './App.css';
 import { HealthCareProvider } from './interfaces/HealthCareProvider';
 import FilteredResults from './pages/Filtered_Results';
 import Scheduler from './pages/Scheduler';
-import { Appointment } from './interfaces/Appointment';
 import healthCareProviders from './data/hcp.json';
 import NavBar from './components/NavBar';
+import { ProviderAndAppt } from './interfaces/ProviderAndAppt';
 
 function App() {
   const INSURANCE_PROVIDERS = [
@@ -42,7 +42,7 @@ function App() {
   const [selectedHcp, setSelectedHCP] = useState<
     HealthCareProvider | undefined
   >();
-  const [appointments, setAppointments] = useState<Appointment[]>([]);
+  const [appointments, setAppointments] = useState<ProviderAndAppt[]>([]);
 
   // These are for setting filter options
   const [distance, setDistance] = useState<number>(0);
@@ -92,7 +92,7 @@ function App() {
           setAppointments={setAppointments}
         ></FilteredResults>
       )}
-      {currentPage === 2 && <Scheduler selectedHcp={selectedHcp}></Scheduler>}
+      {currentPage === 2 && <Scheduler appointments={appointments}></Scheduler>}
     </div>
   );
 }
