@@ -3,11 +3,56 @@ import { HealthCareProvider } from '../interfaces/HealthCareProvider';
 import './../css/ScheduleForm.css';
 
 interface ScheduleFormProps {
+  appointments: Appointment[];
+  allProviders: HealthCareProvider[];
+  filteredProviders: HealthCareProvider[];
   selectedHcp: HealthCareProvider | undefined;
   setShowScheduleForm: (showScheduleForm: boolean) => void;
+  setAllProviders: (allProviders: HealthCareProvider[]) => void;
+  setAppointments: (appointments: Appointment[]) => void;
+  setSelectedHCP: (selectedHcp: HealthCareProvider) => void;
+  setFilteredProviders: (filteredProviders: HealthCareProvider[]) => void;
 }
 
-function ScheduleForm({ selectedHcp, setShowScheduleForm }: ScheduleFormProps) {
+function ScheduleForm({
+  appointments,
+  allProviders,
+  filteredProviders,
+  selectedHcp,
+  setShowScheduleForm,
+  setAllProviders,
+  setAppointments,
+  setSelectedHCP,
+  setFilteredProviders,
+}: ScheduleFormProps) {
+  function changeAppointments(appointment: Appointment) {
+    if (selectedHcp) {
+      selectedHcp = {
+        ...selectedHcp,
+        appointments: selectedHcp.appointments.filter(
+          (providerApp: Appointment) => {
+            if (providerApp !== appointment) {
+              return true;
+            }
+            return false;
+          }
+        ),
+      };
+      setSelectedHCP(selectedHcp);
+      setAllProviders(
+        allProviders.map((provider: HealthCareProvider) =>
+          provider.name !== selectedHcp?.name ? provider : selectedHcp
+        )
+      );
+    }
+    setFilteredProviders(
+      filteredProviders.map((filtered: HealthCareProvider) =>
+        filtered.name !== selectedHcp?.name ? filtered : selectedHcp
+      )
+    );
+    setAppointments([...appointments, appointment]);
+  }
+
   return (
     <div className="sf">
       <div>
@@ -19,7 +64,10 @@ function ScheduleForm({ selectedHcp, setShowScheduleForm }: ScheduleFormProps) {
           {selectedHcp &&
             selectedHcp.appointments.map((appointment: Appointment) => (
               <div className="sf-appointment-container">
-                <div className="sf-appointment">
+                <div
+                  onClick={() => changeAppointments(appointment)}
+                  className="sf-appointment"
+                >
                   {appointment.day +
                     ' ' +
                     appointment.month +

@@ -70,6 +70,8 @@ function App() {
       )}
       {currentPage === 1 && (
         <FilteredResults
+          appointments={appointments}
+          allProviders={allProviders}
           filteredProviders={filteredProviders}
           insuranceProviders={INSURANCE_PROVIDERS}
           healthCareServices={HEALTHCARE_SERVICES}
@@ -82,9 +84,10 @@ function App() {
           setZipCode={setzipCode}
           setInsurance={setInurance}
           setType={setType}
-          setCurrentPage={setCurrentPage}
           setFilteredProviders={setFilteredProviders}
           setSelectedHcp={setSelectedHCP}
+          setAllProviders={setAllProviders}
+          setAppointments={setAppointments}
         ></FilteredResults>
       )}
       {currentPage === 2 && <Scheduler selectedHcp={selectedHcp}></Scheduler>}

@@ -4,8 +4,11 @@ import medOffice from './../assets/medOffice.jpg';
 import SideBar from '../components/SideBar';
 import ScheduleForm from '../components/ScheduleForm';
 import { useState } from 'react';
+import { Appointment } from '../interfaces/Appointment';
 
 interface FilteredResultsProps {
+  appointments: Appointment[];
+  allProviders: HealthCareProvider[];
   filteredProviders: HealthCareProvider[];
   insuranceProviders: string[];
   healthCareServices: string[];
@@ -18,12 +21,15 @@ interface FilteredResultsProps {
   setZipCode: (zipCode: string) => void;
   setInsurance: (insurance: string) => void;
   setType: (type: string) => void;
-  setCurrentPage: (page: number) => void;
   setFilteredProviders: (providers: HealthCareProvider[]) => void;
   setSelectedHcp: (selectedHcp: HealthCareProvider) => void;
+  setAllProviders: (allProviders: HealthCareProvider[]) => void;
+  setAppointments: (appointments: Appointment[]) => void;
 }
 
 function FilteredResults({
+  appointments,
+  allProviders,
   filteredProviders,
   insuranceProviders,
   healthCareServices,
@@ -36,15 +42,17 @@ function FilteredResults({
   setZipCode,
   setInsurance,
   setType,
-  setCurrentPage,
   setFilteredProviders,
   setSelectedHcp,
+  setAllProviders,
+  setAppointments,
 }: FilteredResultsProps) {
   const [showScheduleForm, setShowScheduleForm] = useState<boolean>(false);
   return (
     <div className="fr">
       <div className="fr-side-bar">
         <SideBar
+          allProviders={allProviders}
           insuranceProviders={insuranceProviders}
           healthCareServices={healthCareServices}
           distance={distance}
@@ -55,7 +63,6 @@ function FilteredResults({
           setZipCode={setZipCode}
           setInsurance={setInsurance}
           setType={setType}
-          setCurrentPage={setCurrentPage}
           setFilteredProviders={setFilteredProviders}
         ></SideBar>
       </div>
@@ -84,8 +91,15 @@ function FilteredResults({
       {showScheduleForm && (
         <div className="fr-sf-container">
           <ScheduleForm
+            appointments={appointments}
+            allProviders={allProviders}
+            filteredProviders={filteredProviders}
             selectedHcp={selectedHcp}
             setShowScheduleForm={setShowScheduleForm}
+            setAllProviders={setAllProviders}
+            setAppointments={setAppointments}
+            setSelectedHCP={setSelectedHcp}
+            setFilteredProviders={setFilteredProviders}
           ></ScheduleForm>
         </div>
       )}
