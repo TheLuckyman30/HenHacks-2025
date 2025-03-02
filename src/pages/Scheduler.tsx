@@ -33,18 +33,32 @@ function Scheduler({
   }
 
   return (
-    <div className="sc">
-      <div className="sc-container">
+    <div className="sc background">
+      <div
+        className="sc-container"
+        style={{
+          backgroundColor: 'white',
+          borderRadius: '10%',
+          border: 'none',
+        }}
+      >
         {appointments.map((appointment: ProviderAndAppt) => (
-          <div className="sc-appts">
+          <div
+            className="sc-appts"
+            style={{
+              backgroundColor: 'white',
+              borderRadius: '10%',
+              border: 'none',
+            }}
+          >
             <div>
-              <div style={{ fontWeight: 'bold', fontSize: '20px' }}>
+              <div style={{ fontWeight: 'bold', fontSize: '28px' }}>
                 {appointment.healthCareProvider.name}
               </div>
-              <div style={{ fontSize: '18px' }}>
+              <div style={{ fontSize: '25px' }}>
                 {'Type: ' + appointment.healthCareProvider.type}
               </div>
-              <div style={{ fontSize: '18px' }}>
+              <div style={{ fontSize: '25px' }}>
                 {appointment.appts.day +
                   ' ' +
                   appointment.appts.month +
@@ -62,7 +76,12 @@ function Scheduler({
             >
               Cancel
             </div>
-            <div className="sc-non-working">Reschedule</div>
+            <div
+              className="sc-non-working"
+              style={{ backgroundColor: '#60aaa6' }}
+            >
+              Reschedule
+            </div>
           </div>
         ))}
       </div>

@@ -5,6 +5,7 @@ import SideBar from '../components/SideBar';
 import ScheduleForm from '../components/ScheduleForm';
 import { useState } from 'react';
 import { ProviderAndAppt } from '../interfaces/ProviderAndAppt';
+import Footer from '../components/Footer';
 
 interface FilteredResultsProps {
   appointments: ProviderAndAppt[];
@@ -48,61 +49,70 @@ function FilteredResults({
   setAppointments,
 }: FilteredResultsProps) {
   const [showScheduleForm, setShowScheduleForm] = useState<boolean>(false);
+
   return (
-    <div className="fr">
-      <div className="fr-side-bar">
-        <SideBar
-          allProviders={allProviders}
-          insuranceProviders={insuranceProviders}
-          healthCareServices={healthCareServices}
-          distance={distance}
-          zipCode={zipCode}
-          insurance={insurance}
-          type={type}
-          setDistance={setDistance}
-          setZipCode={setZipCode}
-          setInsurance={setInsurance}
-          setType={setType}
-          setFilteredProviders={setFilteredProviders}
-        ></SideBar>
-      </div>
-      <div className="fr-container">
-        {filteredProviders.map((provider: HealthCareProvider) => (
-          <div className="fr-box">
-            <img className="fr-image" src={medOffice}></img>
-            <div className="fr-margin-left">
-              <div>{'Name: ' + provider.name}</div>
-              <div>{'Address: ' + provider.address}</div>
-              <div>{'Distance: ' + provider.distance + ' miles'}</div>
-              <div>{'Zipcode: ' + provider.zipCode}</div>
-              <div
-                style={{ cursor: 'pointer' }}
-                onClick={() => {
-                  setShowScheduleForm(true);
-                  setSelectedHcp(provider);
-                }}
-              >
-                Schedule
+    <div>
+      <div className="fr background">
+        <div className="fr-side-bar" style={{ backgroundColor: 'white' }}>
+          <SideBar
+            allProviders={allProviders}
+            insuranceProviders={insuranceProviders}
+            healthCareServices={healthCareServices}
+            distance={distance}
+            zipCode={zipCode}
+            insurance={insurance}
+            type={type}
+            setDistance={setDistance}
+            setZipCode={setZipCode}
+            setInsurance={setInsurance}
+            setType={setType}
+            setFilteredProviders={setFilteredProviders}
+          ></SideBar>
+        </div>
+        <div className="fr-container">
+          {filteredProviders.map((provider: HealthCareProvider) => (
+            <div
+              className="fr-box"
+              style={{ backgroundColor: 'white', border: 'none' }}
+            >
+              <img className="fr-image" src={medOffice}></img>
+              <div className="fr-margin-left">
+                <div>{'Name: ' + provider.name}</div>
+                <div>{'Address: ' + provider.address}</div>
+                <div>{'Distance: ' + provider.distance + ' miles'}</div>
+                <div>{'Zipcode: ' + provider.zipCode}</div>
+                <div>{'Insurances: ' + provider.healthInsurance}</div>
+                <div
+                  className="fr-button"
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => {
+                    setShowScheduleForm(true);
+                    setSelectedHcp(provider);
+                  }}
+                >
+                  Schedule
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-      {showScheduleForm && (
-        <div className="fr-sf-container">
-          <ScheduleForm
-            appointments={appointments}
-            allProviders={allProviders}
-            filteredProviders={filteredProviders}
-            selectedHcp={selectedHcp}
-            setShowScheduleForm={setShowScheduleForm}
-            setAllProviders={setAllProviders}
-            setAppointments={setAppointments}
-            setSelectedHCP={setSelectedHcp}
-            setFilteredProviders={setFilteredProviders}
-          ></ScheduleForm>
+          ))}
         </div>
-      )}
+        {showScheduleForm && (
+          <div className="fr-sf-container">
+            <ScheduleForm
+              appointments={appointments}
+              allProviders={allProviders}
+              filteredProviders={filteredProviders}
+              selectedHcp={selectedHcp}
+              setShowScheduleForm={setShowScheduleForm}
+              setAllProviders={setAllProviders}
+              setAppointments={setAppointments}
+              setSelectedHCP={setSelectedHcp}
+              setFilteredProviders={setFilteredProviders}
+            ></ScheduleForm>
+          </div>
+        )}
+      </div>
+      <Footer></Footer>
     </div>
   );
 }

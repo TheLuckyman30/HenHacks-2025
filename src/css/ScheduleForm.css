@@ -1,31 +1,43 @@
 .sf {
-    background-color: white;
-    border: 1px solid black;
+  background-color: white;
+  border: 1px solid black;
 }
 
 .sf-x {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 1rem;
-    font-size: 20px;
-    cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1rem;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .sf-container {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sf-appointment-container {
-    margin: 1rem;
-    display: flex;
+  margin: 1rem;
+  display: flex;
 }
 
 .sf-appointment {
-    padding: 1rem;
-    border: 1px solid black;
-    border-radius: 15px;
-    cursor: pointer;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.results {
+  background-color: white;
+}
+
+.background {
+  background-image: url('../assets/backgroundImage.png');
+  background-size: contain;
+  background-repeat: repeat;
+  background-position: center;
+  min-width: 100vw;
 }

@@ -14,8 +14,8 @@
 }
 
 .lp-button-container {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .lp-button {
@@ -41,19 +41,12 @@
 }
 
 .lp-ff-container {
-    position: fixed;
-    z-index: 1000;
+  position: fixed;
+  z-index: 1000;
 }
 
 .lp-dropdwon {
   width: 50px;
-}
-
-.jost {
-  font-family: 'Jost', serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
 }
 
 .background {
