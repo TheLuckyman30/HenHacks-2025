@@ -3,15 +3,13 @@ import './../css/Landing_Page.css';
 import FindForm from '../components/FindForm';
 import Footer from '../components/Footer';
 import { HealthCareProvider } from '../interfaces/HealthCareProvider';
-import { Row, Col, Container, Button } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import medicine3 from '../assets/medicine3.jpg';
-import genClinic from '../assets/genClinic.png';
 import myChart from '../assets/mychart.png';
 import stLuke from '../assets/stLuke.png';
 
-import MyNavBar from '../components/navBar';
-
 interface LandingPageProps {
+  allProviders: HealthCareProvider[];
   insuranceProviders: string[];
   healthCareServices: string[];
   distance: number;
@@ -27,6 +25,7 @@ interface LandingPageProps {
 }
 
 function LandingPage({
+  allProviders,
   insuranceProviders,
   healthCareServices,
   distance,
@@ -49,9 +48,6 @@ function LandingPage({
   return (
     <div>
       <div className=" background">
-        <section style={{ backgroundColor: 'white', minHeight: '20px' }}>
-          <MyNavBar></MyNavBar>
-        </section>
         <Container
           style={{ width: '100%', height: '100%', justifyContent: 'center' }}
         >
@@ -116,6 +112,7 @@ function LandingPage({
                   }}
                 >
                   <FindForm
+                    allProviders={allProviders}
                     insuranceProviders={insuranceProviders}
                     healthCareServices={healthCareServices}
                     distance={distance}
@@ -140,7 +137,6 @@ function LandingPage({
                   justifyContent: 'center',
                 }}
               >
-                <div></div>
                 <div onClick={formControl} className="lp-button blueish">
                   Find out insurances for specific Clinics
                 </div>
@@ -153,7 +149,6 @@ function LandingPage({
                   justifyContent: 'center',
                 }}
               >
-                <div></div>
                 <div onClick={formControl} className="lp-button">
                   Check appointments
                 </div>

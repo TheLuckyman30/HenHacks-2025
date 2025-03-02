@@ -5,7 +5,11 @@
     "distance": 12,
     "zipCode": "62704",
     "healthInsurance": ["VitalCare Insurance", "Harmony Health Plan"],
-    "type": "Primary Care"
+    "type": "Primary Care",
+    "appointments": [
+      { "day": 2, "month": "March", "year": 2025, "time": "9:00 AM" },
+      { "day": 9, "month": "March", "year": 2025, "time": "1:30 PM" }
+    ]
   },
   {
     "name": "Evergreen Dental Center",
@@ -13,7 +17,11 @@
     "distance": 8,
     "zipCode": "62704",
     "healthInsurance": ["EverTrust Medical", "NovaGuard Health"],
-    "type": "Dentistry"
+    "type": "Dentistry",
+    "appointments": [
+      { "day": 6, "month": "March", "year": 2025, "time": "10:45 AM" },
+      { "day": 14, "month": "March", "year": 2025, "time": "4:00 PM" }
+    ]
   },
   {
     "name": "Summit Mental Health",
@@ -21,7 +29,11 @@
     "distance": 20,
     "zipCode": "62705",
     "healthInsurance": ["BluePeak Coverage", "VitalCare Insurance"],
-    "type": "Mental Health"
+    "type": "Mental Health",
+    "appointments": [
+      { "day": 4, "month": "March", "year": 2025, "time": "8:00 AM" },
+      { "day": 12, "month": "March", "year": 2025, "time": "3:30 PM" }
+    ]
   },
   {
     "name": "Hope Pediatrics",
@@ -29,7 +41,11 @@
     "distance": 15,
     "zipCode": "60601",
     "healthInsurance": ["Harmony Health Plan", "EverTrust Medical"],
-    "type": "Pediatrics"
+    "type": "Pediatrics",
+    "appointments": [
+      { "day": 7, "month": "April", "year": 2025, "time": "9:15 AM" },
+      { "day": 15, "month": "April", "year": 2025, "time": "2:45 PM" }
+    ]
   },
   {
     "name": "Sunrise Cardiology Center",
@@ -37,7 +53,11 @@
     "distance": 30,
     "zipCode": "60602",
     "healthInsurance": ["NovaGuard Health", "BluePeak Coverage"],
-    "type": "Cardiology"
+    "type": "Cardiology",
+    "appointments": [
+      { "day": 10, "month": "April", "year": 2025, "time": "10:30 AM" },
+      { "day": 18, "month": "April", "year": 2025, "time": "4:15 PM" }
+    ]
   },
   {
     "name": "Metro Orthopedic Clinic",
@@ -45,7 +65,11 @@
     "distance": 40,
     "zipCode": "60603",
     "healthInsurance": ["VitalCare Insurance", "EverTrust Medical"],
-    "type": "Orthopedics"
+    "type": "Orthopedics",
+    "appointments": [
+      { "day": 5, "month": "April", "year": 2025, "time": "11:00 AM" },
+      { "day": 13, "month": "April", "year": 2025, "time": "3:00 PM" }
+    ]
   },
   {
     "name": "Lakeside Women's Health",
@@ -53,7 +77,11 @@
     "distance": 10,
     "zipCode": "53201",
     "healthInsurance": ["Harmony Health Plan", "NovaGuard Health"],
-    "type": "Obstetrics & Gynecology"
+    "type": "Obstetrics & Gynecology",
+    "appointments": [
+      { "day": 2, "month": "May", "year": 2025, "time": "9:00 AM" },
+      { "day": 9, "month": "May", "year": 2025, "time": "1:30 PM" }
+    ]
   },
   {
     "name": "Summit Physical Therapy",
@@ -61,7 +89,11 @@
     "distance": 5,
     "zipCode": "53202",
     "healthInsurance": ["BluePeak Coverage", "EverTrust Medical"],
-    "type": "Physical Therapy"
+    "type": "Physical Therapy",
+    "appointments": [
+      { "day": 6, "month": "May", "year": 2025, "time": "10:45 AM" },
+      { "day": 14, "month": "May", "year": 2025, "time": "4:00 PM" }
+    ]
   },
   {
     "name": "Bright Future Pediatrics",
@@ -69,7 +101,11 @@
     "distance": 25,
     "zipCode": "53703",
     "healthInsurance": ["VitalCare Insurance", "Harmony Health Plan"],
-    "type": "Pediatrics"
+    "type": "Pediatrics",
+    "appointments": [
+      { "day": 4, "month": "May", "year": 2025, "time": "8:00 AM" },
+      { "day": 12, "month": "May", "year": 2025, "time": "3:30 PM" }
+    ]
   },
   {
     "name": "Tranquil Mind Psychiatry",
@@ -77,7 +113,11 @@
     "distance": 18,
     "zipCode": "53704",
     "healthInsurance": ["EverTrust Medical", "NovaGuard Health"],
-    "type": "Psychiatry"
+    "type": "Psychiatry",
+    "appointments": [
+      { "day": 7, "month": "June", "year": 2025, "time": "9:15 AM" },
+      { "day": 15, "month": "June", "year": 2025, "time": "2:45 PM" }
+    ]
   },
   {
     "name": "Greenfield Eye Care",
@@ -85,7 +125,11 @@
     "distance": 35,
     "zipCode": "46201",
     "healthInsurance": ["BluePeak Coverage", "VitalCare Insurance"],
-    "type": "Ophthalmology"
+    "type": "Ophthalmology",
+    "appointments": [
+      { "day": 10, "month": "June", "year": 2025, "time": "10:30 AM" },
+      { "day": 18, "month": "June", "year": 2025, "time": "4:15 PM" }
+    ]
   },
   {
     "name": "Heritage Dental Group",
@@ -93,7 +137,11 @@
     "distance": 42,
     "zipCode": "46202",
     "healthInsurance": ["Harmony Health Plan", "EverTrust Medical"],
-    "type": "Dentistry"
+    "type": "Dentistry",
+    "appointments": [
+      { "day": 5, "month": "June", "year": 2025, "time": "11:00 AM" },
+      { "day": 13, "month": "June", "year": 2025, "time": "3:00 PM" }
+    ]
   },
   {
     "name": "Starlight Urgent Care",
@@ -101,7 +149,11 @@
     "distance": 7,
     "zipCode": "40201",
     "healthInsurance": ["NovaGuard Health", "BluePeak Coverage"],
-    "type": "Urgent Care"
+    "type": "Urgent Care",
+    "appointments": [
+      { "day": 2, "month": "July", "year": 2025, "time": "9:00 AM" },
+      { "day": 9, "month": "July", "year": 2025, "time": "1:30 PM" }
+    ]
   },
   {
     "name": "Wellness Endocrinology Center",
@@ -109,7 +161,11 @@
     "distance": 28,
     "zipCode": "40202",
     "healthInsurance": ["VitalCare Insurance", "EverTrust Medical"],
-    "type": "Endocrinology"
+    "type": "Endocrinology",
+    "appointments": [
+      { "day": 6, "month": "July", "year": 2025, "time": "10:45 AM" },
+      { "day": 14, "month": "July", "year": 2025, "time": "4:00 PM" }
+    ]
   },
   {
     "name": "Riverside Oncology Center",
@@ -117,7 +173,11 @@
     "distance": 50,
     "zipCode": "37201",
     "healthInsurance": ["Harmony Health Plan", "NovaGuard Health"],
-    "type": "Oncology"
+    "type": "Oncology",
+    "appointments": [
+      { "day": 4, "month": "July", "year": 2025, "time": "8:00 AM" },
+      { "day": 12, "month": "July", "year": 2025, "time": "3:30 PM" }
+    ]
   },
   {
     "name": "Meadowbrook Family Medicine",
@@ -125,7 +185,11 @@
     "distance": 60,
     "zipCode": "37202",
     "healthInsurance": ["BluePeak Coverage", "EverTrust Medical"],
-    "type": "Primary Care"
+    "type": "Primary Care",
+    "appointments": [
+      { "day": 7, "month": "August", "year": 2025, "time": "9:15 AM" },
+      { "day": 15, "month": "August", "year": 2025, "time": "2:45 PM" }
+    ]
   },
   {
     "name": "Hilltop Psychiatry Center",
@@ -133,7 +197,11 @@
     "distance": 70,
     "zipCode": "38101",
     "healthInsurance": ["VitalCare Insurance", "NovaGuard Health"],
-    "type": "Mental Health"
+    "type": "Mental Health",
+    "appointments": [
+      { "day": 10, "month": "August", "year": 2025, "time": "10:30 AM" },
+      { "day": 18, "month": "August", "year": 2025, "time": "4:15 PM" }
+    ]
   },
   {
     "name": "Spring Valley Orthopedic Clinic",
@@ -141,7 +209,11 @@
     "distance": 55,
     "zipCode": "63101",
     "healthInsurance": ["Harmony Health Plan", "BluePeak Coverage"],
-    "type": "Orthopedics"
+    "type": "Orthopedics",
+    "appointments": [
+      { "day": 5, "month": "August", "year": 2025, "time": "11:00 AM" },
+      { "day": 13, "month": "August", "year": 2025, "time": "3:00 PM" }
+    ]
   },
   {
     "name": "Gateway Women's Health",
@@ -149,6 +221,10 @@
     "distance": 45,
     "zipCode": "63102",
     "healthInsurance": ["EverTrust Medical", "NovaGuard Health"],
-    "type": "Obstetrics & Gynecology"
+    "type": "Obstetrics & Gynecology",
+    "appointments": [
+      { "day": 2, "month": "August", "year": 2025, "time": "9:00 AM" },
+      { "day": 9, "month": "August", "year": 2025, "time": "1:30 PM" }
+    ]
   }
 ]

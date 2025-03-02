@@ -2,8 +2,13 @@ import { HealthCareProvider } from '../interfaces/HealthCareProvider';
 import './../css/Filtered_Results.css';
 import medOffice from './../assets/medOffice.jpg';
 import SideBar from '../components/SideBar';
+import ScheduleForm from '../components/ScheduleForm';
+import { useState } from 'react';
+import { ProviderAndAppt } from '../interfaces/ProviderAndAppt';
 
 interface FilteredResultsProps {
+  appointments: ProviderAndAppt[];
+  allProviders: HealthCareProvider[];
   filteredProviders: HealthCareProvider[];
   insuranceProviders: string[];
   healthCareServices: string[];
@@ -11,15 +16,20 @@ interface FilteredResultsProps {
   zipCode: string;
   insurance: string;
   type: string;
+  selectedHcp: HealthCareProvider | undefined;
   setDistance: (distance: number) => void;
   setZipCode: (zipCode: string) => void;
   setInsurance: (insurance: string) => void;
   setType: (type: string) => void;
-  setCurrentPage: (page: number) => void;
   setFilteredProviders: (providers: HealthCareProvider[]) => void;
+  setSelectedHcp: (selectedHcp: HealthCareProvider) => void;
+  setAllProviders: (allProviders: HealthCareProvider[]) => void;
+  setAppointments: (appointments: ProviderAndAppt[]) => void;
 }
 
 function FilteredResults({
+  appointments,
+  allProviders,
   filteredProviders,
   insuranceProviders,
   healthCareServices,
@@ -27,17 +37,22 @@ function FilteredResults({
   zipCode,
   insurance,
   type,
+  selectedHcp,
   setDistance,
   setZipCode,
   setInsurance,
   setType,
-  setCurrentPage,
   setFilteredProviders,
+  setSelectedHcp,
+  setAllProviders,
+  setAppointments,
 }: FilteredResultsProps) {
+  const [showScheduleForm, setShowScheduleForm] = useState<boolean>(false);
   return (
     <div className="fr">
       <div className="fr-side-bar">
         <SideBar
+          allProviders={allProviders}
           insuranceProviders={insuranceProviders}
           healthCareServices={healthCareServices}
           distance={distance}
@@ -48,34 +63,46 @@ function FilteredResults({
           setZipCode={setZipCode}
           setInsurance={setInsurance}
           setType={setType}
-          setCurrentPage={setCurrentPage}
           setFilteredProviders={setFilteredProviders}
         ></SideBar>
       </div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: '100%',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
+      <div className="fr-container">
         {filteredProviders.map((provider: HealthCareProvider) => (
           <div className="fr-box">
-            <img
-              style={{ width: '300px', height: '300px' }}
-              src={medOffice}
-            ></img>
-            <div style={{ marginLeft: '1rem' }}>
+            <img className="fr-image" src={medOffice}></img>
+            <div className="fr-margin-left">
               <div>{'Name: ' + provider.name}</div>
               <div>{'Address: ' + provider.address}</div>
               <div>{'Distance: ' + provider.distance + ' miles'}</div>
               <div>{'Zipcode: ' + provider.zipCode}</div>
+              <div
+                style={{ cursor: 'pointer' }}
+                onClick={() => {
+                  setShowScheduleForm(true);
+                  setSelectedHcp(provider);
+                }}
+              >
+                Schedule
+              </div>
             </div>
           </div>
         ))}
       </div>
+      {showScheduleForm && (
+        <div className="fr-sf-container">
+          <ScheduleForm
+            appointments={appointments}
+            allProviders={allProviders}
+            filteredProviders={filteredProviders}
+            selectedHcp={selectedHcp}
+            setShowScheduleForm={setShowScheduleForm}
+            setAllProviders={setAllProviders}
+            setAppointments={setAppointments}
+            setSelectedHCP={setSelectedHcp}
+            setFilteredProviders={setFilteredProviders}
+          ></ScheduleForm>
+        </div>
+      )}
     </div>
   );
 }

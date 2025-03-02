@@ -1,8 +1,26 @@
-.vl {
-  border-left: 3px solid white;
-  height: 5%;
-  position: absolute;
-  left: 50%;
-  margin-left: -3px;
-  top: 0;
+.nav {
+    display: flex;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #1976D2;
+}
+
+.nav-bt-container {
+    display: flex;
+}
+
+.nav-bt {
+    cursor: pointer;
+    margin: 1rem;
+    display: flex;
+    border-radius: 15px;
+    color: white;
+    padding: 0.5rem;
+    font-weight: bold;
+    transition: 0.1s;
+}
+
+.nav-bt:hover {
+    background-color: rgb(102, 102, 102);
 }

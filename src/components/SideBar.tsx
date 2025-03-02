@@ -7,10 +7,10 @@ import {
   TextField,
 } from '@mui/material';
 import { HealthCareProvider } from '../interfaces/HealthCareProvider';
-import healthCareProviders from './../data/hcp.json';
 import './../css/SideBar.css';
 
 interface FindFormProps {
+  allProviders: HealthCareProvider[];
   insuranceProviders: string[];
   healthCareServices: string[];
   distance: number;
@@ -21,11 +21,11 @@ interface FindFormProps {
   setZipCode: (zipCode: string) => void;
   setInsurance: (insurance: string) => void;
   setType: (type: string) => void;
-  setCurrentPage: (page: number) => void;
   setFilteredProviders: (providers: HealthCareProvider[]) => void;
 }
 
 function SideBar({
+  allProviders,
   insuranceProviders,
   healthCareServices,
   distance,
@@ -36,12 +36,11 @@ function SideBar({
   setZipCode,
   setInsurance,
   setType,
-  setCurrentPage,
   setFilteredProviders,
 }: FindFormProps) {
   function submit() {
     setFilteredProviders(
-      healthCareProviders.filter((hcp: HealthCareProvider) => {
+      allProviders.filter((hcp: HealthCareProvider) => {
         let isGood: boolean = true;
         if (hcp.healthInsurance.includes(insurance)) {
           if (zipCode && hcp.zipCode !== zipCode) {
