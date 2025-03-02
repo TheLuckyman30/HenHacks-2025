@@ -1,5 +1,5 @@
 import genClinic from '../assets/genClinic.png';
-import './../css/NavBar.css';
+import './../css/navBar.css';
 
 interface NavBarProps {
   setCurrentPage: (page: number) => void;

@@ -5,7 +5,7 @@ import { HealthCareProvider } from './interfaces/HealthCareProvider';
 import FilteredResults from './pages/Filtered_Results';
 import Scheduler from './pages/Scheduler';
 import healthCareProviders from './data/hcp.json';
-import NavBar from './components/NavBar';
+import NavBar from './components/navBar';
 import { ProviderAndAppt } from './interfaces/ProviderAndAppt';
 
 function App() {
