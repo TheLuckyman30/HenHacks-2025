@@ -4,6 +4,9 @@ import FindForm from '../components/FindForm';
 import Footer from '../components/Footer';
 import { HealthCareProvider } from '../interfaces/HealthCareProvider';
 import { Row, Col, Container, Button } from 'react-bootstrap';
+import medicine3 from '../assets/medicine3.jpg';
+import genClinic from '../assets/genClinic.png';
+import MyNavBar from '../components/navBar';
 
 interface LandingPageProps {
   insuranceProviders: string[];
@@ -44,8 +47,7 @@ function LandingPage({
     <div>
       <div className=" background">
         <section style={{ backgroundColor: 'white', minHeight: '20px' }}>
-          <h1>mewo</h1>
-          <p>meow</p>
+          <MyNavBar></MyNavBar>
         </section>
         <Container
           style={{ width: '100%', height: '100%', justifyContent: 'center' }}
@@ -53,19 +55,35 @@ function LandingPage({
           <Row style={{ display: 'flex', height: 'fit-content' }}>
             <Col
               style={{
-                backgroundColor: 'white',
+                backgroundColor: '#ADD9E6',
                 minWidth: '40%',
                 margin: '5%',
+                borderRadius: '15%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                overflow: 'hidden', // Prevents content from overflowing
+                padding: '20px',
+                border: '4px solid white',
               }}
             >
-              {' '}
-              1 of 1
+              <img
+                src={medicine3}
+                alt="Medicine"
+                style={{
+                  width: '100%',
+                  minWidth: '400px',
+                  borderRadius: '15px',
+                  backgroundSize: 'cover',
+                }}
+              />
             </Col>
             <Col
               style={{
                 backgroundColor: 'white',
                 minWidth: '35%',
                 margin: '5%',
+                borderRadius: '15%',
               }}
             >
               <div
@@ -76,7 +94,7 @@ function LandingPage({
                 }}
               >
                 <div></div>
-                <div onClick={formControl} className="lp-button">
+                <div onClick={formControl} className="lp-button pinkish">
                   Find doctors with insurance
                 </div>
               </div>
@@ -120,8 +138,8 @@ function LandingPage({
                 }}
               >
                 <div></div>
-                <div onClick={formControl} className="lp-button">
-                  Find doctors with insurance
+                <div onClick={formControl} className="lp-button blueish">
+                  Find out insurances for specific Clinics
                 </div>
               </div>
 
@@ -134,7 +152,7 @@ function LandingPage({
               >
                 <div></div>
                 <div onClick={formControl} className="lp-button">
-                  Find doctors with insurance
+                  Check appointments
                 </div>
               </div>
             </Col>
