@@ -7,6 +7,7 @@ import { Row, Col, Container } from 'react-bootstrap';
 import medicine3 from '../assets/medicine3.jpg';
 import myChart from '../assets/mychart.png';
 import stLuke from '../assets/stLuke.png';
+import ClinicForm from '../components/ClincForm';
 
 interface LandingPageProps {
   allProviders: HealthCareProvider[];
@@ -40,9 +41,14 @@ function LandingPage({
   setFilteredProviders,
 }: LandingPageProps) {
   const [showForm, setShowForm] = useState<boolean>(false);
+  const [showClinicForm, setshowClinicForm] = useState<boolean>(false);
 
   function formControl() {
     setShowForm(!showForm);
+  }
+
+  function clinicFormControl() {
+    setshowClinicForm(!showClinicForm);
   }
 
   return (
@@ -137,11 +143,33 @@ function LandingPage({
                   justifyContent: 'center',
                 }}
               >
-                <div onClick={formControl} className="lp-button blueish">
+                <div onClick={clinicFormControl} className="lp-button blueish">
                   Find out insurances for specific Clinics
                 </div>
               </div>
-
+              {showClinicForm && (
+                <div
+                  style={{
+                    position: 'fixed',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)' /* Centers the form */,
+                    zIndex: 1000,
+                    background: 'white',
+                    padding: '20px',
+                    borderRadius: '10px',
+                    boxShadow: '0px 0px 10px rgba(0,0,0,0.2)',
+                  }}
+                >
+                  <ClinicForm
+                    allProviders={allProviders}
+                    insuranceProviders={insuranceProviders}
+                    insurance={insurance}
+                    setInsurance={setInsurance}
+                    setShowClinicForm={setshowClinicForm}
+                  ></ClinicForm>
+                </div>
+              )}
               <div
                 style={{
                   display: 'flex',
@@ -149,7 +177,7 @@ function LandingPage({
                   justifyContent: 'center',
                 }}
               >
-                <div onClick={formControl} className="lp-button">
+                <div onClick={() => setCurrentPage(2)} className="lp-button">
                   Check appointments
                 </div>
               </div>
