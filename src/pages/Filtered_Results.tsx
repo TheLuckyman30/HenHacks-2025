@@ -2,6 +2,8 @@ import { HealthCareProvider } from '../interfaces/HealthCareProvider';
 import './../css/Filtered_Results.css';
 import medOffice from './../assets/medOffice.jpg';
 import SideBar from '../components/SideBar';
+import ScheduleForm from '../components/ScheduleForm';
+import { useState } from 'react';
 
 interface FilteredResultsProps {
   filteredProviders: HealthCareProvider[];
@@ -11,6 +13,7 @@ interface FilteredResultsProps {
   zipCode: string;
   insurance: string;
   type: string;
+  selectedHcp: HealthCareProvider | undefined;
   setDistance: (distance: number) => void;
   setZipCode: (zipCode: string) => void;
   setInsurance: (insurance: string) => void;
@@ -28,6 +31,7 @@ function FilteredResults({
   zipCode,
   insurance,
   type,
+  selectedHcp,
   setDistance,
   setZipCode,
   setInsurance,
@@ -36,6 +40,7 @@ function FilteredResults({
   setFilteredProviders,
   setSelectedHcp,
 }: FilteredResultsProps) {
+  const [showScheduleForm, setShowScheduleForm] = useState<boolean>(false);
   return (
     <div className="fr">
       <div className="fr-side-bar">
@@ -75,8 +80,9 @@ function FilteredResults({
               <div>{'Distance: ' + provider.distance + ' miles'}</div>
               <div>{'Zipcode: ' + provider.zipCode}</div>
               <div
+                style={{ cursor: 'pointer' }}
                 onClick={() => {
-                  setCurrentPage(2);
+                  setShowScheduleForm(true);
                   setSelectedHcp(provider);
                 }}
               >
@@ -86,6 +92,20 @@ function FilteredResults({
           </div>
         ))}
       </div>
+      {showScheduleForm && (
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            position: 'fixed',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <ScheduleForm selectedHcp={selectedHcp}></ScheduleForm>
+        </div>
+      )}
     </div>
   );
 }

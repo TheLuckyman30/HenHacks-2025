@@ -71,6 +71,7 @@ function App() {
           zipCode={zipCode}
           insurance={insurance}
           type={type}
+          selectedHcp={selectedHcp}
           setDistance={setDistance}
           setZipCode={setzipCode}
           setInsurance={setInurance}

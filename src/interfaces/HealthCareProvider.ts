@@ -1,3 +1,5 @@
+import { Appointment } from "./Appointment";
+
 export interface HealthCareProvider {
   name: string;
   address: string;
@@ -5,4 +7,5 @@ export interface HealthCareProvider {
   zipCode: string;
   healthInsurance: string[];
   type: string;
+  appointments: Appointment[];
 }

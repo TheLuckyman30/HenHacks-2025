@@ -1,4 +1,4 @@
-export interface Appointments {
+export interface Appointment {
     day: number;
     month: string;
     year: number;
