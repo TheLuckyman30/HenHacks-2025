@@ -3,20 +3,7 @@
 - Selin Bacaz
 - Brandon Nauta
 
-## What this Website does
-
-- Shows which institutions near you take your insurance
-- Helps you schedule
-- Keeps all doctor appointments and myPortals all in one centralized space
-- Very user-friendly UI, designed for everyone but with seniors in mind.
-- Button that has “this is the institution i wanna go to, what insurance does it take”, “this is the insurance I have, what institutions can I go to”, and “schedule appointment”
-- Chatbot that helps users navigate throughout website- this should be on the main page and its idea is to help users find what they need quick by letting the bot search thru the website. Idea inspiration: for elderly who aren't tech savvy talk to the bot
-- Being able to schedule online by filling out all ‘scheduling questions’ and having a provider call you back just to confirm-> saves having to wait in long phone lines at the doctor and saves time for the worker having to just confirm already given information.
-- Waitlist & Standby Options: Allow patients to join waitlists and get automatically notified if an earlier slot becomes available, also allow students to access est. walk-in wait Times for clinics and see where in line they are and how much longer estimated.
-- Notifies abt new doctors, new insurance, retired doctors, or loss of insurance in the area or in saved institutions
-- Login mechanism: saves used institutions, helps send notifs about used institutions, and contains scheduled appointments, give access to trusted handlers (like a daughter being able to access and use the mother’s account to help her manage it and schedule), and my chart links to institutions if there are any
-
-## How we came up with the idea
+## How we came up with the idea:
 
 The idea is that this becomes part of a federal website/ federally funded so all institutions get Onboard: this adds organization and togetherness to the overall healthcare system.
 More ideas for the future: Also Have a coupled app for on-the-go scheduling, Real-time updates, Better communication in terms of queue time at waiting room (especially for walk-ins). Create a version for Healthcare workers- Letting them easily see patient’s schedule
@@ -31,3 +18,19 @@ Brandon went to a walk in appointment and did not know how long the queue would 
 One of our family members who works in medical also complained about notoriously bad scheduling in the field
 
 We added more and more ideas from there, also deciding to make it elderly-friendly because not many gov sites are easily understood and we wanted the elderly to reap benefits from this website as well.
+
+## What this website currently does:
+
+- Shows which institutions near you take your insurance
+- Helps you schedule
+- Keeps all doctor appointments and myPortals all in one centralized space
+- Very user-friendly UI, designed for everyone but with seniors in mind.
+- Button that has “this is the institution i wanna go to, what insurance does it take”, “this is the insurance I have, what institutions can I go to”, and “schedule appointment”
+
+## What we want it to do
+
+- Being able to schedule online by filling out all ‘scheduling questions’ and having a provider call you back just to confirm-> saves having to wait in long phone lines at the doctor and saves time for the worker having to just confirm already given information.
+- Waitlist & Standby Options: Allow patients to join waitlists and get automatically notified if an earlier slot becomes available, also allow students to access est. walk-in wait Times for clinics and see where in line they are and how much longer estimated.
+- Notifies abt new doctors, new insurance, retired doctors, or loss of insurance in the area or in saved institutions
+- Login mechanism: saves used institutions, helps send notifs about used institutions, and contains scheduled appointments, give access to trusted handlers (like a daughter being able to access and use the mother’s account to help her manage it and schedule), and my chart links to institutions if there are any
+- Chatbot that helps users navigate throughout website- this should be on the main page and its idea is to help users find what they need quick by letting the bot search thru the website. Idea inspiration: for elderly who aren't tech savvy talk to the bot
