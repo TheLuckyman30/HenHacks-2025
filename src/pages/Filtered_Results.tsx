@@ -35,8 +35,8 @@ function FilteredResults({
   setFilteredProviders,
 }: FilteredResultsProps) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <div>
+    <div style={{ width: '100%', display: 'flex' }}>
+      <div style={{ width: 'fit-content' }}>
         <SideBar
           insuranceProviders={insuranceProviders}
           healthCareServices={healthCareServices}
@@ -52,15 +52,25 @@ function FilteredResults({
           setFilteredProviders={setFilteredProviders}
         ></SideBar>
       </div>
-      {filteredProviders.map((provider: HealthCareProvider) => (
-        <div className="fr-box">
-          <img src={medOffice}></img>
-          <div>{provider.name}</div>
-          <div>{provider.address}</div>
-          <div>{provider.distance + ' miles'}</div>
-          <div>{provider.zipCode}</div>
-        </div>
-      ))}
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        {filteredProviders.map((provider: HealthCareProvider) => (
+          <div className="fr-box">
+            <img src={medOffice}></img>
+            <div>{provider.name}</div>
+            <div>{provider.address}</div>
+            <div>{provider.distance + ' miles'}</div>
+            <div>{provider.zipCode}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

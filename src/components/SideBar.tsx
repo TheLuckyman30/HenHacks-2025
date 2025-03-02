@@ -6,7 +6,6 @@ import {
   SelectChangeEvent,
   TextField,
 } from '@mui/material';
-import './../css/FindForms.css';
 import { HealthCareProvider } from '../interfaces/HealthCareProvider';
 import healthCareProviders from './../data/hcp.json';
 
@@ -63,16 +62,9 @@ function SideBar({
   }
 
   return (
-    <div className="form">
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          alignItems: 'center ',
-        }}
-      >
-        <div className="ff-input">
+    <div>
+      <div>
+        <div>
           <FormControl fullWidth>
             <InputLabel>Insurance</InputLabel>
             <Select
@@ -88,7 +80,7 @@ function SideBar({
             </Select>
           </FormControl>
         </div>
-        <div className="ff-input">
+        <div>
           <TextField
             label="Distance"
             value={distance}
@@ -98,7 +90,7 @@ function SideBar({
             }
           ></TextField>
         </div>
-        <div className="ff-input">
+        <div>
           <TextField
             label="Zip Code"
             value={zipCode}
@@ -108,7 +100,7 @@ function SideBar({
             }
           ></TextField>
         </div>
-        <div className="ff-input">
+        <div>
           <FormControl fullWidth>
             <InputLabel>Type</InputLabel>
             <Select
@@ -124,12 +116,7 @@ function SideBar({
             </Select>
           </FormControl>
         </div>
-        <div
-          onClick={submit}
-          className={insurance ? 'ff-submit' : 'ff-disabled'}
-        >
-          Submit
-        </div>
+        <div onClick={submit}>Submit</div>
       </div>
     </div>
   );
