@@ -29,5 +29,33 @@
 }
 
 .lp-dropdwon {
-    width: 50px
+    width: 50px;
 }
+
+
+.jost {
+  font-family: "Jost", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.background {
+    background-image: url('../assets/backgroundImage.png');
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  .parent {
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+  }
+  .child {
+    display: inline-block;
+    border: 1px solid red;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+  }
