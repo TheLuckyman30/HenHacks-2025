@@ -103,7 +103,10 @@ function FilteredResults({
             alignItems: 'center',
           }}
         >
-          <ScheduleForm selectedHcp={selectedHcp}></ScheduleForm>
+          <ScheduleForm
+            selectedHcp={selectedHcp}
+            setShowScheduleForm={setShowScheduleForm}
+          ></ScheduleForm>
         </div>
       )}
     </div>
