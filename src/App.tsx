@@ -3,6 +3,7 @@ import LandingPage from './pages/Landing_Page';
 import './App.css';
 import { HealthCareProvider } from './interfaces/HealthCareProvider';
 import FilteredResults from './pages/Filtered_Results';
+import Scheduler from './pages/Scheduler';
 
 function App() {
   const INSURANCE_PROVIDERS = [
@@ -33,6 +34,9 @@ function App() {
   const [filteredProviders, setFilteredProviders] = useState<
     HealthCareProvider[]
   >([]);
+  const [selectedHcp, setSelectedHCP] = useState<
+    HealthCareProvider | undefined
+  >();
 
   // These are for setting filter options
   const [distance, setDistance] = useState<number>(0);
@@ -73,8 +77,10 @@ function App() {
           setType={setType}
           setCurrentPage={setCurrentPage}
           setFilteredProviders={setFilteredProviders}
+          setSelectedHcp={setSelectedHCP}
         ></FilteredResults>
       )}
+      {currentPage === 2 && <Scheduler selectedHcp={selectedHcp}></Scheduler>}
     </div>
   );
 }

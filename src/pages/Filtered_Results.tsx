@@ -17,6 +17,7 @@ interface FilteredResultsProps {
   setType: (type: string) => void;
   setCurrentPage: (page: number) => void;
   setFilteredProviders: (providers: HealthCareProvider[]) => void;
+  setSelectedHcp: (selectedHcp: HealthCareProvider) => void;
 }
 
 function FilteredResults({
@@ -33,6 +34,7 @@ function FilteredResults({
   setType,
   setCurrentPage,
   setFilteredProviders,
+  setSelectedHcp,
 }: FilteredResultsProps) {
   return (
     <div className="fr">
@@ -72,6 +74,14 @@ function FilteredResults({
               <div>{'Address: ' + provider.address}</div>
               <div>{'Distance: ' + provider.distance + ' miles'}</div>
               <div>{'Zipcode: ' + provider.zipCode}</div>
+              <div
+                onClick={() => {
+                  setCurrentPage(2);
+                  setSelectedHcp(provider);
+                }}
+              >
+                Schedule
+              </div>
             </div>
           </div>
         ))}
