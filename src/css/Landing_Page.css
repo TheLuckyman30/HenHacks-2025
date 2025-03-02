@@ -1,16 +1,16 @@
 .lp {
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .lp-title {
-    font-size: 50px;
-    padding: 3rem;
+  font-size: 50px;
+  padding: 3rem;
 }
 
 .lp-button-container {
@@ -19,18 +19,25 @@
 }
 
 .lp-button {
-    cursor: pointer;
-    font-size: 25px;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 15px;
-    background-color: rgb(97, 179, 97);
-    color: white;
-    transition: 0.2s;
+  cursor: pointer;
+  font-size: 25px;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 15px;
+  background-color: rgb(97, 179, 97);
+  color: white;
+  transition: 0.2s;
+  min-height: 95px;
+  min-width: 70%; /* Adjust width if necessary */
+
+  display: flex; /* Add this */
+  align-items: center; /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  text-align: center;
 }
 
 .lp-button:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .lp-ff-container {
@@ -39,5 +46,40 @@
 }
 
 .lp-dropdwon {
-    width: 50px
+  width: 50px;
+}
+
+.jost {
+  font-family: 'Jost', serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.background {
+  background-image: url('../assets/backgroundImage.png');
+  background-size: contain;
+  background-repeat: repeat-x;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+.parent {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;
+}
+.child {
+  display: inline-block;
+  border: 1px solid red;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+}
+
+.pinkish {
+  background-color: rgb(175, 118, 102);
+}
+.blueish {
+  background-color: rgb(96, 170, 166);
 }
