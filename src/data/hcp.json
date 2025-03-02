@@ -137,7 +137,7 @@
   },
   {
     "name": "Spring Valley Orthopedic Clinic",
-    "address": "666 Fir Dr, St. Louis, MO",
+    "address": "625 Fir Dr, St. Louis, MO",
     "distance": 55,
     "zipCode": "63101",
     "healthInsurance": ["Harmony Health Plan", "BluePeak Coverage"],
