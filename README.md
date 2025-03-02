@@ -16,7 +16,7 @@
 - Notifies abt new doctors, new insurance, retired doctors, or loss of insurance in the area or in saved institutions
 - Login mechanism: saves used institutions, helps send notifs about used institutions, and contains scheduled appointments, give access to trusted handlers (like a daughter being able to access and use the mother’s account to help her manage it and schedule), and my chart links to institutions if there are any
 
-## How we came up wit the idea
+## How we came up with the idea
 
 The idea is that this becomes part of a federal website/ federally funded so all institutions get Onboard: this adds organization and togetherness to the overall healthcare system.
 More ideas for the future: Also Have a coupled app for on-the-go scheduling, Real-time updates, Better communication in terms of queue time at waiting room (especially for walk-ins). Create a version for Healthcare workers- Letting them easily see patient’s schedule
