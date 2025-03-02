@@ -6,6 +6,7 @@ import FilteredResults from './pages/Filtered_Results';
 import Scheduler from './pages/Scheduler';
 import { Appointment } from './interfaces/Appointment';
 import healthCareProviders from './data/hcp.json';
+import NavBar from './components/NavBar';
 
 function App() {
   const INSURANCE_PROVIDERS = [
@@ -51,6 +52,7 @@ function App() {
 
   return (
     <div className="app">
+      <NavBar setCurrentPage={setCurrentPage}></NavBar>
       {currentPage === 0 && (
         <LandingPage
           allProviders={allProviders}

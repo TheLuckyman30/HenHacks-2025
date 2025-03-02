@@ -5,7 +5,6 @@ import Footer from '../components/Footer';
 import { HealthCareProvider } from '../interfaces/HealthCareProvider';
 import { Row, Col, Container } from 'react-bootstrap';
 import medicine3 from '../assets/medicine3.jpg';
-import MyNavBar from '../components/navBar';
 
 interface LandingPageProps {
   allProviders: HealthCareProvider[];
@@ -47,9 +46,6 @@ function LandingPage({
   return (
     <div>
       <div className=" background">
-        <section style={{ backgroundColor: 'white', minHeight: '20px' }}>
-          <MyNavBar></MyNavBar>
-        </section>
         <Container
           style={{ width: '100%', height: '100%', justifyContent: 'center' }}
         >
@@ -139,7 +135,6 @@ function LandingPage({
                   justifyContent: 'center',
                 }}
               >
-                <div></div>
                 <div onClick={formControl} className="lp-button blueish">
                   Find out insurances for specific Clinics
                 </div>
@@ -152,7 +147,6 @@ function LandingPage({
                   justifyContent: 'center',
                 }}
               >
-                <div></div>
                 <div onClick={formControl} className="lp-button">
                   Check appointments
                 </div>
