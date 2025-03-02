@@ -1,8 +1,19 @@
 import { useState } from 'react';
 import './../css/Landing_Page.css';
 import FindForm from '../components/FindForm';
+import { HealthCareProvider } from '../interfaces/HealthCareProvider';
 
-function LandingPage() {
+interface LandingPageProps {
+  filteredProviders: HealthCareProvider[];
+  setCurrentPage: (page: number) => void;
+  setFilteredProviders: (providers: HealthCareProvider[]) => void;
+}
+
+function LandingPage({
+  filteredProviders,
+  setCurrentPage,
+  setFilteredProviders,
+}: LandingPageProps) {
   const INSURANCE_PROVIDERS = [
     'VitalCare Insurance',
     'Harmony Health Plan',
@@ -61,6 +72,8 @@ function LandingPage() {
             setInsurance={setInurance}
             setType={setType}
             setShowForm={setShowForm}
+            setCurrentPage={setCurrentPage}
+            setFilteredProviders={setFilteredProviders}
           ></FindForm>
         </div>
       )}

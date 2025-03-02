@@ -7,6 +7,8 @@ import {
   TextField,
 } from '@mui/material';
 import './../css/FindForms.css';
+import { HealthCareProvider } from '../interfaces/HealthCareProvider';
+import healthCareProviders from './../data/hcp.json';
 
 interface FindFormProps {
   insuranceProviders: string[];
@@ -20,6 +22,8 @@ interface FindFormProps {
   setInsurance: (insurance: string) => void;
   setType: (type: string) => void;
   setShowForm: (show: boolean) => void;
+  setCurrentPage: (page: number) => void;
+  setFilteredProviders: (providers: HealthCareProvider[]) => void;
 }
 
 function FindForm({
@@ -34,7 +38,33 @@ function FindForm({
   setInsurance,
   setType,
   setShowForm,
+  setCurrentPage,
+  setFilteredProviders,
 }: FindFormProps) {
+  function submit() {
+    setCurrentPage(1);
+    setShowForm(false);
+    setFilteredProviders(
+      healthCareProviders.filter((hcp: HealthCareProvider) => {
+        let isGood: boolean = true;
+        if (hcp.healthInsurance.includes(insurance)) {
+          if (zipCode && hcp.zipCode !== zipCode) {
+            isGood = false;
+          }
+          if (distance && hcp.distance > distance) {
+            isGood = false;
+          }
+          if (type && hcp.type !== type) {
+            isGood;
+          }
+          if (isGood) {
+            return hcp;
+          }
+        }
+      })
+    );
+  }
+
   return (
     <div className="form">
       <div
@@ -109,7 +139,9 @@ function FindForm({
             </Select>
           </FormControl>
         </div>
-        <div className="ff-submit">Submit</div>
+        <div onClick={submit} className="ff-submit">
+          Submit
+        </div>
       </div>
     </div>
   );
