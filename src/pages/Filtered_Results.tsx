@@ -76,12 +76,15 @@ function FilteredResults({
               style={{ backgroundColor: 'white', border: 'none' }}
             >
               <img className="fr-image" src={medOffice}></img>
-              <div className="fr-margin-left">
-                <div>{'Name: ' + provider.name}</div>
+              <div className="fr-margin-left" style={{ fontSize: '20px' }}>
+                <div style={{ fontWeight: 'bold', fontSize: '25px' }}>
+                  {provider.name}
+                </div>
                 <div>{'Address: ' + provider.address}</div>
                 <div>{'Distance: ' + provider.distance + ' miles'}</div>
                 <div>{'Zipcode: ' + provider.zipCode}</div>
                 <div>{'Insurances: ' + provider.healthInsurance}</div>
+                <div>{'Service: ' + provider.type}</div>
                 <div
                   className="fr-button"
                   style={{ cursor: 'pointer' }}
