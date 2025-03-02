@@ -6,6 +6,9 @@ import { HealthCareProvider } from '../interfaces/HealthCareProvider';
 import { Row, Col, Container, Button } from 'react-bootstrap';
 import medicine3 from '../assets/medicine3.jpg';
 import genClinic from '../assets/genClinic.png';
+import myChart from '../assets/mychart.png';
+import stLuke from '../assets/stLuke.png';
+
 import MyNavBar from '../components/navBar';
 
 interface LandingPageProps {
@@ -156,6 +159,107 @@ function LandingPage({
                 </div>
               </div>
             </Col>
+          </Row>
+
+          <Row style={{ display: 'flex', justifyContent: 'center' }}>
+            <Row
+              style={{
+                backgroundColor: 'white',
+                minWidth: '40%',
+                minHeight: '300px',
+                margin: '5%',
+                borderRadius: '15%',
+                justifyContent: 'center',
+                alignItems: 'center',
+                overflow: 'hidden', // Prevents content from overflowing
+                padding: '20px',
+                border: '4px solid white',
+                textAlign: 'center', // Ensures the text inside the Row is centered
+              }}
+            >
+              <h2
+                style={{
+                  color: 'brown',
+                  textAlign: 'center',
+                }}
+              >
+                My Portals
+              </h2>
+              <hr
+                style={{
+                  backgroundColor: 'brown',
+                  width: '50%',
+                  margin: '20px auto',
+                  height: '2px',
+                  border: 'none',
+                }}
+              />
+              <button
+                className="lp-button"
+                style={{
+                  borderRadius: '50%',
+                  backgroundColor: 'brown',
+                  color: 'white',
+                  border: 'none',
+                  display: 'inline',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  cursor: 'pointer',
+                  transition: 'background-color 0.3s',
+                  overflow: 'hidden',
+                  minWidth: '20%',
+                  minHeight: '20%',
+                }}
+                onClick={() =>
+                  (window.location.href = 'https://www.mychart.org/')
+                }
+              >
+                <img
+                  src={myChart} // Replace with your image path
+                  alt="My Image"
+                  style={{
+                    width: '100%', // Ensure the image takes up the entire button
+                    height: '100%',
+                    backgroundSize: 'contain',
+
+                    // Ensures the image covers the button area without distortion
+                  }}
+                />
+              </button>
+              <button
+                className="lp-button"
+                style={{
+                  borderRadius: '50%', // This makes the button round
+                  backgroundColor: '#003F78',
+                  color: 'white',
+                  border: 'none',
+                  display: 'inline',
+                  justifyContent: 'center', // Center the image inside the button
+                  alignItems: 'center', // Vertically center the image
+                  cursor: 'pointer',
+                  transition: 'background-color 0.3s',
+                  overflow: 'hidden',
+                  minWidth: '20%',
+                  minHeight: '20%',
+                }}
+                onClick={() =>
+                  (window.location.href = 'https://www.slhn.org/mychart/login')
+                }
+              >
+                <img
+                  src={stLuke} // Replace with your image path
+                  alt="My Image"
+                  style={{
+                    width: '100%', // Ensure the image takes up the entire button
+                    height: '100%',
+                    backgroundSize: 'contain',
+                    // Ensures the image covers the button area without distortion
+                  }}
+                />
+              </button>
+            </Row>
+            <Col></Col>
+            <Row></Row>
           </Row>
         </Container>
       </div>
